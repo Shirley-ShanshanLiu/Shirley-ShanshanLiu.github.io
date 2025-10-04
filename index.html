@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title> Shanshan (Shirley) Liu | Academic Homepage</title>
   <meta name="description" content="学术主页 / Academic personal website" />
-  <link rel="preconnect" href="https://scholar.google.com/citations?user=64vXCmkAAAAJ&hl=en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -47,6 +48,10 @@
     .row{display:flex;gap:10px;flex-wrap:wrap}
     input[type=search]{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text)}
     .hint{font-size:12px;color:var(--muted)}
+    .subtitle{font-size:16px;color:var(--muted);margin-top:4px}
+    .ri{margin:12px 0 0 18px;padding:0}
+    .ri li{margin:4px 0}
+    .hero h1{margin:6px 0 2px}
   </style>
 </head>
 <body>
@@ -70,37 +75,51 @@
 
   <main class="container">
     <section class="hero grid grid-2">
-      <div class="card">
-        <div style="display:flex; gap:16px; align-items:center">
-          <div class="avatar">你</div>
-          <div>
-            <div class="kicker">Hello / 你好</div>
-            <h1>I am <span style="color:var(--accent)">Shanshan Liu</span>Research Interests：Sustainable Transporation Systems · ML/AI Applications in Transportation Engineering · Integration of Transportation and Energy Systems · Autonomous, Electric, and Shared Vehicles Operations · Mobility and Energy Equity</h1>
-            <!-- <p class="muted">一句简短介绍：单位/团队、研究愿景与关键词（中英文混排也可）。</p> -->
-            <div class="social" style="margin-top:8px">
-              <a class="btn" href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noreferrer">Google Scholar</a>
-              <a class="btn" href="https://orcid.org/XXXX-XXXX-XXXX-XXXX" target="_blank" rel="noreferrer">ORCID</a>
-              <a class="btn" href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="btn" href="/CV.pdf" target="_blank" rel="noreferrer">CV（PDF）</a>
-            </div>
-          </div>
+  <div class="card">
+    <div style="display:flex; gap:16px; align-items:center">
+      <div class="avatar">
+        <!-- 如果已上传头像到仓库根目录，把 me.jpg 换成你的文件名 -->
+        <img src="me.jpg" alt="Shanshan (Shirley) Liu" style="width:100%;height:100%;border-radius:18px;object-fit:cover;">
+      </div>
+      <div>
+        <div class="kicker">HELLO</div>
+        <h1>I’m <span style="color:var(--accent)">Shanshan (Shirley) Liu</span></h1>
+        <p class="subtitle">Ph.D. candidate in Transportation Engineering &amp; Energy Systems</p>
+
+        <ul class="ri">
+          <li>Sustainable Transportation Systems</li>
+          <li>ML/AI for Transportation Engineering</li>
+          <li>Transportation–Energy Systems Integration</li>
+          <li>Operations of Autonomous, Electric &amp; Shared Vehicles</li>
+          <li>Mobility &amp; Energy Equity</li>
+        </ul>
+
+        <div class="social" style="margin-top:10px">
+          <!-- 把链接换成你的真实地址 -->
+          <a class="btn" href="https://scholar.google.com/citations?user=64vXCmkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn" href="https://orcid.org/0000-0002-4173-7485" target="_blank" rel="noreferrer">ORCID</a>
+          <a class="btn" href="https://www.linkedin.com/in/shanshan-shirley-liu-27082320a/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="/CV.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
         </div>
       </div>
-      <div class="card">
-        <h2>站点导航</h2>
-        <div class="toc">
-          <a href="#pubs">论文</a>
-          <a href="#news">最新动态</a>
-          <a href="#teaching">教学与服务</a>
-          <a href="#contact">联系</a>
-        </div>
-        <p class="muted">本页为单文件模板，可直接部署到 GitHub Pages。替换占位信息即可上线。</p>
-      </div>
-    </section>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Quick Links</h2>
+    <div class="toc">
+      <a href="#pubs">Publications</a>
+      <a href="#teaching">Awards</a>
+      <a href="#contact">Presentations</a>
+    </div>
+    <p class="muted">This is a single-file template deployable on GitHub Pages.</p>
+  </div>
+</section>
+
 
     <section id="about" class="card">
       <div class="section-title">
-        <h2>关于我</h2>
+        <h2>About</h2>
         <span class="pill">#Research Interests</span>
       </div>
       <p>请在这里写 3–5 句自我介绍：研究兴趣、目标问题、代表性成果或平台、希望合作的方向。</p>
@@ -114,7 +133,7 @@
 
     <section id="news" class="card">
       <div class="section-title">
-        <h2>近期动态</h2>
+        <h2>Publications</h2>
         <span class="muted">Last updated: <span id="lastUpdated">—</span></span>
       </div>
       <ul class="list">
@@ -152,7 +171,7 @@
 
     <section id="teaching" class="card">
       <div class="section-title">
-        <h2>教学与服务</h2>
+        <h2>Awards</h2>
         <span class="pill">#Teaching #Service</span>
       </div>
       <ul>
@@ -164,14 +183,14 @@
 
     <section id="contact" class="card">
       <div class="section-title">
-        <h2>联系</h2>
+        <h2>Contact</h2>
         <span class="pill">#Email</span>
       </div>
-      <p>邮箱：<a href="mailto:you@example.com">you@example.com</a> · 学校/机构地址 · 社交媒体。</p>
+      <p>Email：<a href="mailto:shansliu@umich.edu">you@example.com</a> · Universty of Michigan</p>
     </section>
 
     <footer class="container">
-      <p>© <span id="year"></span> 你的名字 · Powered by GitHub Pages · 主题切换会记忆到本地。</p>
+      <p>© <span id="year"></span> Shanshan Liu · Powered by GitHub Pages </p>
     </footer>
   </main>
 
