@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Awards — Shanshan (Shirley) Liu</title>
-  <meta name="description" content="Awards — Shanshan (Shirley) Liu" />
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awards & Honors — Shanshan (Shirley) Liu</title>
+  <meta name="description" content="Awards & Honors — Shanshan (Shirley) Liu" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
 
@@ -22,42 +20,52 @@
       </a>
       <nav>
         <a href="publications.html" class="">Publications</a>
-        <a href="teaching.html">Teaching</a>
+        <a href="teaching.html" class="">Teaching</a>
         <a href="awards.html" class="active">Awards</a>
-        <a href="presentations.html">Presentations</a>
+        <a href="presentations.html" class="">Presentations</a>
         <a href="cv.pdf">CV</a>
+        <a href="#" id="themeToggle" title="Toggle theme">🌓</a>
       </nav>
     </div>
   </header>
-
   <main class="container">
-    
-<section class="card">
-  <h1>Awards & Honors</h1>
-</section>
+    <section class="card">
+      <h1>Awards & Honors</h1>
+      
+<ol class="num">
+  <li>Lee Schipper Memorial Scholarship — Global award (one of three awardees), Sustainable Transport and Energy Efficiency — 2023</li>
+  <li>ARTBA Women Leaders Future Industry Spotlight Award — 2023</li>
+  <li>International Transport Forum Young Researcher of the Year Award — Finalist — 2023</li>
+  <li>WTS Greater Chicago — Leadership Legacy Scholarship for Graduates — 2022</li>
+  <li>Midwest Big Data Hub Learning Innovation Fellowship — 2021</li>
+  <li>ARPA‑E Energy Innovation Summit — Student Program (Accepted) — 2021</li>
+  <li>Pecan Street Inc. — Vehicle‑to‑Grid University Challenge — Winner — 2021</li>
+  <li>Outstanding Graduate — 2020</li>
+  <li>National Transport S&amp;T Competition — Runner‑up — 2017</li>
+  <li>SRTP Excellent Prize — 2016</li>
+  <li>Multiple University Scholarships — 2015–2018</li>
+</ol>
 
-<section class="card">
-  <div class="list">
-    <div><h3>Lee Schipper Memorial Scholarship</h3><div class="meta">Global award (one of three awardees) for Sustainable Transport and Energy Efficiency — 2023</div></div>
-    <div><h3>ARTBA Women Leaders Future Industry Spotlight Award</h3><div class="meta">2023</div></div>
-    <div><h3>Young Researcher of the Year Award — Finalist</h3><div class="meta">International Transport Forum — 2023</div></div>
-    <div><h3>Leadership Legacy Scholarship for Graduates</h3><div class="meta">WTS Greater Chicago — 2022</div></div>
-    <div><h3>Midwest Big Data Hub Learning Innovation Fellowship</h3><div class="meta">2021</div></div>
-    <div><h3>ARPA‑E Energy Innovation Summit — Student Program (Accepted)</h3><div class="meta">2021</div></div>
-    <div><h3>Vehicle‑to‑Grid University Challenge — Winner</h3><div class="meta">Pecan Street Inc. — 2021</div></div>
-    <div><h3>Outstanding Graduate</h3><div class="meta">2020</div></div>
-    <div><h3>Runner‑up, National Transport S&amp;T Competition</h3><div class="meta">2017</div></div>
-    <div><h3>SRTP Excellent Prize</h3><div class="meta">2016</div></div>
-    <div><h3>Multiple University Scholarships</h3><div class="meta">2015–2018</div></div>
-  </div>
-</section>
-
-  </main>
-
+    </section>
     <footer class="container">
       <p>© <span id="year"></span> Shanshan (Shirley) Liu · Powered by GitHub Pages</p>
     </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
+  </main>
+  
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if(saved === 'light') root.classList.add('light');
+      const t = document.getElementById('themeToggle');
+      if(t){ t.addEventListener('click', function(e){ e.preventDefault();
+        root.classList.toggle('light');
+        localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      });}
+      const y = document.getElementById('year');
+      if(y){ y.textContent = new Date().getFullYear(); }
+    })();
+  </script>
+    
 </body>
 </html>
