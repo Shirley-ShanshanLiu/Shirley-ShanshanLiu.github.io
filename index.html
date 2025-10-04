@@ -1,244 +1,112 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Shanshan (Shirley) Liu | Academic Homepage</title>
-  <meta name="description" content="学术主页 / Academic personal website" />
+  <title>Shanshan (Shirley) Liu | Academic Homepage</title>
+  <meta name="description" content="Academic homepage of Shanshan (Shirley) Liu" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{ --bg:#0b0d10; --card:#101418; --text:#e6edf3; --muted:#9fb2c8; --accent:#55a6ff; --accent2:#7bd389; --border:#1f2630; --shadow:rgba(0,0,0,0.25) }
-    .light{ --bg:#f7f9fc; --card:#ffffff; --text:#111827; --muted:#6b7280; --accent:#2563eb; --accent2:#059669; --border:#e5e7eb; --shadow:rgba(0,0,0,0.06) }
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.65}
-    .container{max-width:980px;margin:0 auto;padding:28px 20px 60px}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab,var(--bg) 85%,transparent);border-bottom:1px solid var(--border);z-index:10}
-    .nav{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
-    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 6px 20px var(--shadow)}
-    .brand strong{font-weight:700}
-    .toc{display:flex;gap:12px;flex-wrap:wrap}
-    .toc a{color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:10px;padding:6px 10px}
-    .toc a:hover{color:var(--text)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:12px;text-decoration:none;box-shadow:0 6px 24px var(--shadow)}
-    .grid{display:grid;gap:18px}
-    @media(min-width:960px){.grid-2{grid-template-columns:1.2fr .8fr}}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 6px 24px var(--shadow)}
-    .hero{display:flex;flex-direction:column;gap:16px;padding-top:20px}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:4px 0}
-    h2{font-size:22px;margin:0 0 10px}
-    h3{margin:0 0 4px;font-size:18px}
-    p{margin:8px 0}
-    ul{margin:10px 0 0 22px}
-    code,.pill{background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:2px 8px;font-size:12px}
-    .kicker{color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-    .muted{color:var(--muted)}
-    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-    .list{display:grid;gap:12px}
-    footer{margin-top:32px;color:var(--muted);font-size:14px}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .avatar{width:110px;height:110px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:44px;color:white}
-    .social{display:flex;flex-wrap:wrap;gap:10px}
-    .badge{font-size:12px;padding:4px 8px;border-radius:8px;background:color-mix(in oklab,var(--accent) 18%,var(--card));border:1px solid var(--border)}
-    .pub{border:1px dashed var(--border);padding:12px;border-radius:12px}
-    .pub .meta{font-size:13px;color:var(--muted)}
-    .row{display:flex;gap:10px;flex-wrap:wrap}
-    input[type=search]{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text)}
-    .hint{font-size:12px;color:var(--muted)}
-    .subtitle{font-size:16px;color:var(--muted);margin-top:4px}
-    .ri{margin:12px 0 0 18px;padding:0}
-    .ri li{margin:4px 0}
-    .hero h1{margin:6px 0 2px}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html">
         <div class="logo" aria-hidden="true"></div>
-        <strong>Shanshan Liu</strong>
-        <span class="badge">Academic Homepage</span>
+        <strong>Shanshan (Shirley) Liu</strong>
       </a>
-      <nav class="toc">
-        <a href="#about">About</a>
-        <!-- <a href="#news">动态</a> -->
-        <a href="#pubs">Research</a>
-        <a href="#teaching">Awards</a>
-        <a href="#contact">Presentations</a>
-        <a href="#" id="themeToggle" title="Switch Theme" aria-label="Toggle theme">🌓</a>
+      <nav>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="awards.html">Awards</a>
+        <a href="presentations.html">Presentations</a>
+        <a href="cv.pdf">CV</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero grid grid-2">
-  <div class="card">
-    <div style="display:flex; gap:16px; align-items:center">
-      <div class="avatar">
-        <!-- 如果已上传头像到仓库根目录，把 me.jpg 换成你的文件名 -->
-        <img src="me.jpg" alt="Shanshan (Shirley) Liu" style="width:100%;height:100%;border-radius:18px;object-fit:cover;">
-      </div>
-      <div>
-        <div class="kicker">HELLO</div>
-        <h1>I’m <span style="color:var(--accent)">Shanshan (Shirley) Liu</span></h1>
-        <p class="subtitle">Schmidt AI in Science Postdoctoral Fellow at University of Michigan</p>
-
-        <ul class="ri">
-          <li>Sustainable Transportation Systems</li>
-          <li>ML/AI for Transportation Engineering</li>
-          <li>Transportation–Energy Systems Integration</li>
-          <li>Operations of Autonomous, Electric &amp; Shared Vehicles</li>
-          <li>Mobility &amp; Energy Equity</li>
-        </ul>
-
-        <div class="social" style="margin-top:10px">
-          <!-- 把链接换成你的真实地址 -->
-          <a class="btn" href="https://scholar.google.com/citations?user=64vXCmkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-          <a class="btn" href="https://orcid.org/0000-0002-4173-7485" target="_blank" rel="noreferrer">ORCID</a>
-          <a class="btn" href="https://www.linkedin.com/in/shanshan-shirley-liu-27082320a/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="/CV.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
+      <div class="card">
+        <div style="display:flex; gap:16px; align-items:center">
+          <div class="avatar"><!-- upload me.jpg later -->
+            <span>SL</span>
+          </div>
+          <div>
+            <div class="kicker">Hello</div>
+            <h1>I’m <span style="color:var(--accent)">Shanshan (Shirley) Liu</span></h1>
+            <p class="subtitle">Transportation Engineering & Energy Systems · University of Michigan</p>
+            <div class="pills">
+              <span class="pill">Sustainable Transportation</span>
+              <span class="pill">ML/AI for Transportation</span>
+              <span class="pill">Transport–Energy Integration</span>
+              <span class="pill">AV/EV/Shared Mobility</span>
+              <span class="pill">Mobility & Energy Equity</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Quick Links</h2>
-    <div class="toc">
-      <a href="#pubs">Publications</a>
-      <a href="#teaching">Awards</a>
-      <a href="#contact">Presentations</a>
-    </div>
-    <p class="muted">This is a single-file template deployable on GitHub Pages.</p>
-  </div>
-</section>
-
-
-    <section id="about" class="card">
-      <div class="section-title">
-        <h2>About</h2>
-        <span class="pill">#Research Interests</span>
-      </div>
-      <p>My research focuses on transportation electrification policy and planning, sustainable transportation systems, and the interdependence of transportation and energy sectors. With the application of AI methods in transportation domain, she aims to explore the nexus between building energy systems and electrified transportation, with the goal of enhancing community resilience and mitigating health impacts during climate change events and power outages.</p>
-      <div class="tags">
-        <span class="pill">Transportation</span>
-        <span class="pill">Sustainability</span>
-        <span class="pill">AI in Science</span>
-        <span class="pill">Energy</span>
+      <div class="card">
+        <h2>Featured Research</h2>
+        <div class="list">
+          <div>
+            <h3>Electrified School Buses & Community Microgrids</h3>
+            <div class="meta">Energy resilience · grid-aware scheduling · equity impacts</div>
+          </div>
+          <div>
+            <h3>Predictive Analytics for EV Adoption & Shared Mobility</h3>
+            <div class="meta">Behavioral modeling · spatial–temporal ML</div>
+          </div>
+          <div>
+            <h3>Transportation–Energy Co-Optimization</h3>
+            <div class="meta">Charging infrastructure planning · renewable integration</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="news" class="card">
-      <div class="section-title">
-        <h2>Publications</h2>
-        <span class="muted">Last updated: <span id="lastUpdated">—</span></span>
-      </div>
+    <section class="card">
+      <h2>News</h2>
       <ul class="list">
-        <li>2025-09 — 论文 A 接收于 <em>Journal/Conference</em>（链接）</li>
-        <li>2025-08 — 发布开源项目 B（GitHub 链接）</li>
-        <li>2025-07 — 获得奖项/资助 C（官网）</li>
+        <li><strong>2025-09</strong> — Paper accepted on AI-enhanced landslide displacement prediction. <span class="meta">Acta Geotechnica</span></li>
+        <li><strong>2025-08</strong> — Released open-source tools for EV adoption analytics. <span class="meta"><a href="#" class="meta">GitHub</a></span></li>
       </ul>
     </section>
 
-    <section id="pubs" class="card">
-      <div class="section-title">
-        <h2>论文与出版物</h2>
-        <a class="btn" href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noreferrer">Google Scholar</a>
+    <section class="card">
+      <h2>Selected Publications</h2>
+      <div class="list">
+        <div>
+          <h3>Title of a representative paper</h3>
+          <div class="meta">Author A, <strong>Liu, S.</strong>, Author C · Journal · 2024 · <a href="#">PDF</a> · <a href="#">Code</a></div>
+        </div>
+        <div>
+          <h3>Another representative paper</h3>
+          <div class="meta">Author A, <strong>Liu, S.</strong> · Conference · 2023 · <a href="#">PDF</a></div>
+        </div>
       </div>
-      <input id="pubSearch" type="search" placeholder="按关键词或年份过滤（示例：2024 / landslide / geotechnical）">
-      <p class="hint">在下方条目中替换作者、题目、期刊信息与链接；“复制 BibTeX” 按钮会把对应 BibTeX 放入剪贴板。</p>
-      <ul class="list" id="pubList">
-        <li class="pub" data-year="2025" data-tags="landslide ai resilience">
-          <h3>作者1, <strong>你的名字</strong>, 作者3. 论文标题. <em>期刊 / 会议</em>, 2025.</h3>
-          <div class="meta row">
-            <a class="btn" href="#">PDF</a>
-            <a class="btn" href="#">代码</a>
-            <button class="btn copy-bib" data-bib='@article{yourkey2025, author={Author1 and YourName and Author3}, title={Paper Title}, journal={Journal}, year={2025}}'>复制 BibTeX</button>
-          </div>
-        </li>
-        <li class="pub" data-year="2024" data-tags="geotechnical ml physics-informed">
-          <h3><strong>你的名字</strong>, 合作者. 论文标题（英文/中文皆可）. <em>Acta Geotechnica</em>, 2024.</h3>
-          <div class="meta row">
-            <a class="btn" href="#">PDF</a>
-            <button class="btn copy-bib" data-bib='@article{yourkey2024, author={YourName and Coauthor}, title={Title}, journal={Acta Geotechnica}, year={2024}}'>复制 BibTeX</button>
-          </div>
-        </li>
-      </ul>
+      <p class="muted" style="margin-top:8px">Full list: <a href="publications.html">Publications</a></p>
     </section>
 
-    <section id="teaching" class="card">
-      <div class="section-title">
-        <h2>Awards</h2>
-        <span class="pill">#Teaching #Service</span>
+    <section class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a> · Ann Arbor, MI</p>
+      <div class="pills">
+        <a class="btn" href="https://scholar.google.com/citations?user=64vXCmkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+        <a class="btn" href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
-      <ul>
-        <li>课程 A（年份） · 授课/助教 · 简述</li>
-        <li>审稿：期刊 A, 期刊 B, 期刊 C</li>
-        <li>社区：活动/组织/开源维护</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="card">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <span class="pill">#Email</span>
-      </div>
-      <p>Email：<a href="mailto:shansliu@umich.edu">you@example.com</a> · Universty of Michigan</p>
     </section>
 
     <footer class="container">
-      <p>© <span id="year"></span> Shanshan Liu · Powered by GitHub Pages </p>
+      <p>© <span id="year"></span> Shanshan (Shirley) Liu · Powered by GitHub Pages</p>
     </footer>
   </main>
 
   <script>
-    // Last updated
-    const lu = document.getElementById('lastUpdated');
-    try { lu.textContent = new Date(document.lastModified).toISOString().slice(0,10); }
-    catch(e){ lu.textContent = new Date().toISOString().slice(0,10); }
-
-    // Theme toggle
-    const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if(saved === 'light') root.classList.add('light');
-    document.getElementById('themeToggle').addEventListener('click', (e)=>{
-      e.preventDefault();
-      root.classList.toggle('light');
-      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-    });
-
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Pub search filter (keyword or year)
-    const search = document.getElementById('pubSearch');
-    const list = document.getElementById('pubList');
-    const items = Array.from(list.querySelectorAll('.pub'));
-    function filterPubs(q){
-      const tokens = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
-      items.forEach(li=>{
-        const hay = (li.textContent + ' ' + (li.dataset.tags||'') + ' ' + (li.dataset.year||'')).toLowerCase();
-        const ok = tokens.every(t=> hay.includes(t));
-        li.style.display = ok ? '' : 'none';
-      });
-    }
-    search.addEventListener('input', e=> filterPubs(e.target.value));
-
-    // Copy BibTeX
-    document.querySelectorAll('.copy-bib').forEach(btn=>{
-      btn.addEventListener('click', async ()=>{
-        try{
-          await navigator.clipboard.writeText(btn.dataset.bib);
-          btn.textContent = '已复制 ✓';
-          setTimeout(()=>btn.textContent='复制 BibTeX', 1500);
-        }catch(err){
-          alert('复制失败，请手动复制：'+btn.dataset.bib);
-        }
-      })
-    })
   </script>
 </body>
 </html>
