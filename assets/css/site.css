@@ -76,24 +76,24 @@
 }
 
 :root[data-theme="dark"] {
-  --paper: #0f2c36;
-  --paper-2: #133540;
-  --paper-3: #1a4250;
-  --card: #143844;
-  --ink: #eef6f4;
-  --ink-2: #bcd6d8;
-  --ink-3: #9dbcc1;
-  --rule: #25505b;
-  --rule-strong: #3a6b75;
-  --mobility: #74dcb4;
-  --mobility-soft: #14473f;
+  --paper: #0f2539;
+  --paper-2: #132c42;
+  --paper-3: #1a3852;
+  --card: #15304a;
+  --ink: #eef3f7;
+  --ink-2: #bfcddb;
+  --ink-3: #a0b2c4;
+  --rule: #26405a;
+  --rule-strong: #3b5878;
+  --mobility: #79d7b8;
+  --mobility-soft: #173c4c;
   --amber: #f6bd55;
   --amber-ink: #f6bd55;
-  --amber-soft: #3b3a1e;
+  --amber-soft: #3a3624;
   --coral: #ff9f86;
-  --coral-soft: #40292a;
+  --coral-soft: #402a33;
   --violet: #bfb4ff;
-  --violet-soft: #2a2f55;
+  --violet-soft: #2b2d58;
   --brand-shield: #ffcb05;
   --brand-ink: #00274c;
   --focus: #9cc4ff;
@@ -102,24 +102,24 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0f2c36;
-    --paper-2: #133540;
-    --paper-3: #1a4250;
-    --card: #143844;
-    --ink: #eef6f4;
-    --ink-2: #bcd6d8;
-    --ink-3: #9dbcc1;
-    --rule: #25505b;
-    --rule-strong: #3a6b75;
-    --mobility: #74dcb4;
-    --mobility-soft: #14473f;
+    --paper: #0f2539;
+    --paper-2: #132c42;
+    --paper-3: #1a3852;
+    --card: #15304a;
+    --ink: #eef3f7;
+    --ink-2: #bfcddb;
+    --ink-3: #a0b2c4;
+    --rule: #26405a;
+    --rule-strong: #3b5878;
+    --mobility: #79d7b8;
+    --mobility-soft: #173c4c;
     --amber: #f6bd55;
     --amber-ink: #f6bd55;
-    --amber-soft: #3b3a1e;
+    --amber-soft: #3a3624;
     --coral: #ff9f86;
-    --coral-soft: #40292a;
+    --coral-soft: #402a33;
     --violet: #bfb4ff;
-    --violet-soft: #2a2f55;
+    --violet-soft: #2b2d58;
     --brand-shield: #ffcb05;
     --brand-ink: #00274c;
     --focus: #9cc4ff;
@@ -318,8 +318,8 @@ main { display: block; }
 
 /* ---------- Central question ---------- */
 .question { padding-block: clamp(56px, 8vw, 104px); background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
-:root[data-theme="dark"] .question { background: linear-gradient(115deg, #0a2430 0%, #0e3240 70%, #134049 100%); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .question { background: linear-gradient(115deg, #0a2430 0%, #0e3240 70%, #134049 100%); } }
+:root[data-theme="dark"] .question { background: linear-gradient(115deg, #0b1f31 0%, #0f2d48 70%, #133752 100%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .question { background: linear-gradient(115deg, #0b1f31 0%, #0f2d48 70%, #133752 100%); } }
 .question .label { color: color-mix(in srgb, var(--paper) 70%, transparent); }
 :root[data-theme="dark"] .question { color: var(--ink); }
 :root[data-theme="dark"] .question .label { color: var(--ink-3); }
