@@ -1,0 +1,120 @@
+<svg class="sys" id="sys" data-mode="mobility" viewBox="0 0 960 400" role="img" aria-labelledby="sys-title" aria-describedby="sys-desc" focusable="false">
+  <title id="sys-title">One vehicle, three roles</title>
+  <desc id="sys-desc">Schematic of a distribution grid feeding a home, an office and a school. An electric car and an electric school bus either travel between them, charge from the buildings, or — during a grid outage — send power back to the home and the school.</desc>
+
+  <!-- Transmission tower -->
+  <g class="tower" aria-hidden="true">
+    <path d="M38 250 L55 72 M82 250 L65 72 M55 72 L60 50 L65 72 M36 82 H84 M42 108 H78 M53 112 L70 152 M67 112 L50 152 M48 160 L74 206 M72 160 L46 206 M44 214 L80 250 M76 214 L40 250"/>
+  </g>
+  <text class="tag-sm" x="100" y="46">Distribution grid</text>
+
+  <!-- Wire + service drops -->
+  <path class="wire" d="M84 82 C120 94 160 98 200 93 C300 102 400 102 480 91 C580 101 680 103 760 97 C820 101 880 97 920 92 M200 93 V125 M480 91 V118 M760 97 V132"/>
+  <path class="flow flow--grid f-grid" d="M84 82 C120 94 160 98 200 93 C300 102 400 102 480 91 C580 101 680 103 760 97 M200 93 V125 M480 91 V118 M760 97 V132"/>
+
+  <!-- Outage marks -->
+  <g class="outage-mark" aria-hidden="true">
+    <path d="M193 102 l14 14 M207 102 l-14 14 M473 97 l14 14 M487 97 l-14 14 M753 107 l14 14 M767 107 l-14 14"/>
+    <text x="920" y="46" text-anchor="end">GRID OUTAGE</text>
+  </g>
+
+  <!-- Buildings -->
+  <g class="home">
+    <path class="stroke fill-card" d="M144 170 H256 V250 H144 Z"/>
+    <path class="stroke" d="M132 176 L200 125 L268 176"/>
+    <rect class="window stroke-thin" x="158" y="186" width="26" height="22" rx="2"/>
+    <rect class="window stroke-thin" x="216" y="186" width="26" height="22" rx="2"/>
+    <path class="stroke" d="M190 250 V214 H210 V250"/>
+  </g>
+  <g class="office">
+    <path class="stroke fill-card" d="M418 118 H542 V250 H418 Z"/>
+    <rect class="window" x="432" y="134" width="24" height="18" rx="2"/>
+    <rect class="window" x="468" y="134" width="24" height="18" rx="2"/>
+    <rect class="window" x="504" y="134" width="24" height="18" rx="2"/>
+    <rect class="window" x="432" y="164" width="24" height="18" rx="2"/>
+    <rect class="window" x="468" y="164" width="24" height="18" rx="2"/>
+    <rect class="window" x="504" y="164" width="24" height="18" rx="2"/>
+    <rect class="window" x="432" y="194" width="24" height="18" rx="2"/>
+    <rect class="window" x="468" y="194" width="24" height="18" rx="2"/>
+    <rect class="window" x="504" y="194" width="24" height="18" rx="2"/>
+    <path class="stroke" d="M466 250 V224 H494 V250"/>
+  </g>
+  <g class="school">
+    <path class="stroke fill-card" d="M680 176 H840 V250 H680 Z"/>
+    <path class="stroke fill-card" d="M730 176 V152 H790 V176"/>
+    <path class="stroke" d="M722 153 L760 132 L798 153"/>
+    <circle class="stroke" cx="760" cy="164" r="6"/>
+    <rect class="window" x="692" y="192" width="22" height="20" rx="2"/>
+    <rect class="window" x="718" y="192" width="22" height="20" rx="2"/>
+    <rect class="window" x="780" y="192" width="22" height="20" rx="2"/>
+    <rect class="window" x="806" y="192" width="22" height="20" rx="2"/>
+    <path class="stroke" d="M750 250 V216 H770 V250"/>
+  </g>
+
+  <path class="ground" d="M20 250 H940"/>
+  <text class="tag-sm" x="140" y="276">Home</text>
+  <text class="tag-sm" x="414" y="276">Office</text>
+  <text class="tag-sm" x="676" y="276">School</text>
+
+  <!-- Building ⇄ vehicle connectors -->
+  <g class="f-charge" aria-hidden="true">
+    <path class="flow flow--energy" d="M502 256 V282"/>
+    <path class="arrow" d="M495 277 L502 285 L509 277"/>
+    <path class="flow flow--energy" d="M782 256 V280"/>
+    <path class="arrow" d="M775 278 L782 286 L789 278"/>
+  </g>
+  <g class="f-backup" aria-hidden="true">
+    <path class="flow flow--energy flow--up" d="M222 284 V258"/>
+    <path class="arrow" d="M215 262 L222 254 L229 262"/>
+    <path class="flow flow--energy flow--up" d="M782 284 V258"/>
+    <path class="arrow" d="M775 262 L782 254 L789 262"/>
+  </g>
+
+  <!-- Road + transit-style route -->
+  <path class="road" d="M20 352 H940"/>
+  <g class="route" aria-hidden="true">
+    <path d="M200 368 H760"/>
+    <circle cx="200" cy="368" r="6"/>
+    <circle cx="480" cy="368" r="6"/>
+    <circle cx="760" cy="368" r="6"/>
+  </g>
+
+  <!-- Vehicles -->
+  <g class="vehicle bus" aria-hidden="true">
+    <rect class="body" x="-78" y="-50" width="156" height="38" rx="7"/>
+    <rect class="glass" x="-68" y="-43" width="16" height="12" rx="2"/>
+    <rect class="glass" x="-46" y="-43" width="16" height="12" rx="2"/>
+    <rect class="glass" x="-24" y="-43" width="16" height="12" rx="2"/>
+    <rect class="glass" x="-2" y="-43" width="16" height="12" rx="2"/>
+    <rect class="glass" x="20" y="-43" width="16" height="12" rx="2"/>
+    <rect class="glass" x="44" y="-43" width="26" height="18" rx="2"/>
+    <path class="trim" d="M-78 -25 H40"/>
+    <circle class="wheel" cx="-48" cy="-11" r="11"/><circle class="hub" cx="-48" cy="-11" r="4.5"/>
+    <circle class="wheel" cx="48" cy="-11" r="11"/><circle class="hub" cx="48" cy="-11" r="4.5"/>
+  </g>
+  <g class="vehicle car" aria-hidden="true">
+    <path class="body" d="M-54 -14 C-54 -24 -50 -30 -40 -31 L-26 -32 L-12 -47 C-9 -50 -5 -51 0 -51 L20 -51 C27 -51 31 -49 35 -44 L44 -32 L50 -30 C55 -29 56 -25 56 -20 L56 -14 Z"/>
+    <path class="glass" d="M-20 -33 L-8 -45 C-6 -47 -4 -47 -2 -47 L6 -47 L6 -33 Z M11 -33 L11 -47 L19 -47 C24 -47 27 -45 30 -41 L36 -33 Z"/>
+    <path class="bolt" d="M3 -29 L-3 -21 L1.5 -21 L-1 -15 L5.5 -24 L1 -24 Z"/>
+    <circle class="wheel" cx="-32" cy="-11" r="11"/><circle class="hub" cx="-32" cy="-11" r="4.5"/>
+    <circle class="wheel" cx="32" cy="-11" r="11"/><circle class="hub" cx="32" cy="-11" r="4.5"/>
+    <g class="soc">
+      <rect class="frame" x="-14" y="-74" width="28" height="13" rx="3"/>
+      <rect x="14" y="-70.5" width="3" height="6" rx="1" fill="var(--ink-2)"/>
+      <rect class="level" x="-11.5" y="-71.5" width="14" height="8" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- Mode labels -->
+  <g class="badge b-commute" aria-hidden="true">
+    <text x="480" y="396" text-anchor="middle">Daily trips draw on the same battery</text>
+  </g>
+  <g class="badge b-load" aria-hidden="true">
+    <text x="480" y="392" text-anchor="middle">Managed charging</text>
+    <text x="760" y="392" text-anchor="middle">Depot charging</text>
+  </g>
+  <g class="badge b-backup" aria-hidden="true">
+    <text x="200" y="392" text-anchor="middle">Vehicle-to-home</text>
+    <text x="760" y="392" text-anchor="middle">Vehicle-to-building</text>
+  </g>
+</svg>

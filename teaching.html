@@ -1,60 +1,128 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teaching — Shanshan (Shirley) Liu</title>
-  <meta name="description" content="Teaching — Shanshan (Shirley) Liu" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+---
+layout: default
+title: Teaching & Mentoring
+slug: teaching
+description: "Teaching, mentoring, convening, and service by Shanshan (Shirley) Liu, including AI for scientists and engineers and undergraduate mentoring."
+---
+{%- assign cv = site.data.cv -%}
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <div class="logo" aria-hidden="true"></div>
-        <strong>Shanshan (Shirley) Liu</strong>
-      </a>
-      <nav>
-        <a href="publications.html" class="">Publications</a>
-        <a href="teaching.html" class="active">Teaching</a>
-        <a href="awards.html" class="">Awards</a>
-        <a href="presentations.html" class="">Presentations</a>
-        <a href="cv.pdf">CV</a>
-        <a href="#" id="themeToggle" title="Toggle theme">🌓</a>
-      </nav>
+<header class="page-head">
+  <div class="wrap">
+    <p class="label">Teaching &amp; mentoring</p>
+    <h1>Teaching at the meeting point of engineering and data science</h1>
+    <p class="lede">
+      I teach how to build and evaluate models that decisions can rely on, and I mentor students into real research —
+      with clear milestones, reproducible workflows, and authorship they earn.
+    </p>
+    <ul class="toc" aria-label="On this page">
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#mentoring">Mentoring</a></li>
+      <li><a href="#convening">Convening</a></li>
+      <li><a href="#service">Service &amp; leadership</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="section" id="teaching" aria-labelledby="teaching-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Teaching</p>
+      <h2 id="teaching-title">Courses, lectures &amp; seminars</h2>
+    </header>
+    <ul class="cards-2">
+      <li class="card">
+        <p class="label">Instructor · Jul 2026</p>
+        <h3>AI for Scientists and Engineers Summer Academy</h3>
+        <p class="where">Michigan Institute for Data and AI in Society, University of Michigan</p>
+        <p>In the academy’s second week, <em>Implementations of AI for Research with Python</em>, I taught <strong>Evaluating ML Models and Model Selection</strong> to an interdisciplinary audience of researchers — emphasizing rigorous validation, fair comparison of candidate models, and aligning evaluation choices with the scientific question being asked.</p>
+      </li>
+      <li class="card">
+        <p class="label">Teaching assistant · Spring 2018</p>
+        <h3>Basic Theories of Modern Transport Management</h3>
+        <p class="where">Southeast University, Nanjing</p>
+        <p>Prepared lectures and in-class activities, and designed and graded assessments for first-year graduate students.</p>
+      </li>
+    </ul>
+    <h3 class="label" style="margin: 40px 0 6px">Guest lectures &amp; seminars</h3>
+    <ul class="cv-list" style="border-top:1px solid var(--rule); padding-top: 20px">
+      {%- for t in cv.talks_seminars -%}
+      <li class="cv-item">
+        <span class="what">{{ t.title }}</span>
+        <span class="where">{{ t.venue }}</span>
+        <span class="when">{{ t.when }}</span>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint" id="mentoring" aria-labelledby="mentoring-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Mentoring</p>
+      <h2 id="mentoring-title">From first project to first paper</h2>
+      <p>At Illinois I guided undergraduates from their first data set through modeling, writing, and presenting. Both co-authored journal articles and continued to graduate school.</p>
+    </header>
+    <ul class="cards-2">
+      <li class="card">
+        <p class="label">Undergraduate research · 2021–2022</p>
+        <h3>Managed EV charging for cost minimization</h3>
+        <p class="where">Mentee: Tinghan Ye</p>
+        <p>Guided data processing, method development, and scholarly writing for an optimization model that shifts home charging to cheaper hours while meeting driver and community preferences.</p>
+        <p class="outcome">Published in <a href="{{ '/publications.html' | relative_url }}#ye2024tranpol"><i>Transport Policy</i> (2024)</a>; now a Ph.D. candidate at Georgia Tech</p>
+      </li>
+      <li class="card">
+        <p class="label">Undergraduate Research Apprenticeship Program (URAP) · 2021–2022</p>
+        <h3>Residential vehicle-to-grid for peak shaving &amp; valley filling</h3>
+        <p class="where">Mentee: Chen Si</p>
+        <p>Mentored data processing and modeling; the project delivered a full analysis package and a final technical presentation.</p>
+        <p class="outcome">Continued to graduate study at UC San Diego; also a co-author on <a href="{{ '/publications.html' | relative_url }}#liu2024trd"><i>Transportation Research Part D</i> (2024)</a></p>
+      </li>
+    </ul>
+
+    <h3 class="label" style="margin: 48px 0 6px">How I mentor</h3>
+    <ol class="principles">
+      <li><strong>Projects sized to the student.</strong> Newer researchers start by reproducing results, auditing data, and stress-testing assumptions; more experienced students build models and work directly with partners.</li>
+      <li><strong>Clear checkpoints.</strong> We agree on milestones up front, so progress — and problems — surface early.</li>
+      <li><strong>Work someone else can rerun.</strong> Code, data steps, and assumptions are written down as we go.</li>
+      <li><strong>Ownership that grows.</strong> Credit and authorship are discussed early, and students take over more of the research decisions as they gain experience.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="convening" aria-labelledby="convening-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Convening</p>
+      <h2 id="convening-title">Bringing researchers and communities together</h2>
+      <p>With support from Schmidt Sciences, I help convene interdisciplinary gatherings around AI, science communication, and the fellows’ community.</p>
+    </header>
+    <div class="convenings" style="margin-top:0">
+      {%- for c in cv.convenings -%}
+      <article class="convening">
+        <p class="label">{{ c.role }} · {{ c.when }}</p>
+        <h3>{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
+        <p>Funded by {{ c.funder }}.{% if c.detail != "" %} {{ c.detail }}{% endif %}</p>
+      </article>
+      {%- endfor -%}
     </div>
-  </header>
-  <main class="container">
-    <section class="card">
-      <h1>Teaching</h1>
-      <ol class='num'>
-<li>CEE 5XX: Sustainable Transportation Systems — Instructor / TA · 2024</li>
-<li>Guest Lectures — Energy & Mobility; AI for Transportation</li>
-</ol>
-    </section>
-    <footer class="container">
-      <p>© <span id="year"></span> Shanshan (Shirley) Liu · Powered by GitHub Pages</p>
-    </footer>
-  </main>
-  
-  <script>
-    (function(){
-      const root = document.documentElement;
-      const saved = localStorage.getItem('theme');
-      if(saved === 'light') root.classList.add('light');
-      const t = document.getElementById('themeToggle');
-      if(t){ t.addEventListener('click', function(e){ e.preventDefault();
-        root.classList.toggle('light');
-        localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-      });}
-      const y = document.getElementById('year');
-      if(y){ y.textContent = new Date().getFullYear(); }
-    })();
-  </script>
-    
-</body>
-</html>
+  </div>
+</section>
+
+<section class="section section--tint" id="service" aria-labelledby="service-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Service &amp; leadership</p>
+      <h2 id="service-title">Reviewing, judging &amp; student leadership</h2>
+    </header>
+    <ul class="cv-list">
+      {%- for s in cv.service -%}
+      <li class="cv-item">
+        <span class="what">{{ s.what }}</span>
+        {%- if s.detail %}<span class="where">{{ s.detail }}</span>{% endif %}
+        {%- if s.when %}<span class="when">{{ s.when }}</span>{% endif %}
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

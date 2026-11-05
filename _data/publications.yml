@@ -1,0 +1,253 @@
+# ---------------------------------------------------------------------------
+# Publications
+#
+# Each entry renders on the Publications page (grouped by `type`) and, if
+# `selected: true`, as a card on the home page.
+#
+#   type      journal | preprint | conference | chapter
+#   authors   list in published order; append "*" for corresponding author.
+#             Shanshan's name is highlighted automatically.
+#   themes    any of: vulnerability, ev-building, resilience, health,
+#             physics-ai, mobility, transit   (used for filters + color)
+#   mentee    name of a mentored student co-author (adds a small tag)
+#   summary   one or two plain-language sentences, faithful to the abstract
+#   takeaway  a short key finding used on home-page cards
+#
+# Metadata verified against Crossref / OpenAlex.
+# ---------------------------------------------------------------------------
+
+- id: liu2025energy
+  type: journal
+  selected: true
+  year: 2025
+  title: "Leveraging electric vehicles as a resiliency solution for residential backup power during outages"
+  authors: ["Shanshan Liu", "Alex Vlachokostas", "Eleftheria Kontou*"]
+  venue: "Energy"
+  volume: "318"
+  article: "134613"
+  doi: "10.1016/j.energy.2025.134613"
+  open_access: true
+  themes: [resilience]
+  summary: >-
+    Simulates vehicle-to-home (V2H) backup across nine U.S. climate regions,
+    four seasons, and short, long, and extreme outages, and proposes metrics
+    for household energy and mobility resilience.
+  takeaway: >-
+    Even at 50% charge, today's EVs can carry a home through a 12-hour outage
+    in spring and autumn in every climate region studied except the Midwest.
+
+- id: liu2025buildenv
+  type: journal
+  selected: true
+  year: 2025
+  title: "Resilience and environmental benefits of electric school buses as backup power for educational functions continuation during outages"
+  authors: ["Shanshan Liu", "Alex Vlachokostas", "Eleftheria Kontou*"]
+  venue: "Building and Environment"
+  volume: "269"
+  article: "112329"
+  doi: "10.1016/j.buildenv.2024.112329"
+  open_access: true
+  data: "https://doi.org/10.13012/B2IDB-4925630_V1"
+  themes: [resilience]
+  summary: >-
+    Assesses whether electric school bus fleets, using vehicle-to-building
+    (V2B) technology, can keep secondary schools operating through power
+    outages in representative cities across nine U.S. climate regions.
+  takeaway: >-
+    Today's fleets cannot carry a whole school, but V2B cuts emissions
+    compared with diesel generators — and gathering students in classrooms
+    markedly improved resilience in a Houston case study.
+
+- id: liu2024trd
+  type: journal
+  selected: true
+  year: 2024
+  title: "Coupled management of electric vehicle workplace charging and office building loads"
+  authors: ["Shanshan Liu", "Alex Vlachokostas", "Chen Si", "Eleftheria Kontou*"]
+  venue: "Transportation Research Part D: Transport and Environment"
+  venue_short: "Transportation Research Part D"
+  volume: "134"
+  article: "104317"
+  doi: "10.1016/j.trd.2024.104317"
+  open_access: true
+  oa: "https://www.osti.gov/servlets/purl/2480318"
+  themes: [ev-building]
+  mentee: "Chen Si"
+  summary: >-
+    Couples office-building energy simulation (HVAC setpoints, daylighting)
+    with commuters' travel patterns to size how many workplace EVs saved
+    building energy can charge, then minimizes charging cost under
+    time-of-use pricing in Chicago, Baltimore, and Houston.
+  takeaway: >-
+    Managing workplace charging together with building loads lowers charging
+    bills compared with first-come, first-served charging.
+
+- id: liu2022scs
+  type: journal
+  selected: true
+  year: 2022
+  title: "Quantifying transportation energy vulnerability and its spatial patterns in the United States"
+  authors: ["Shanshan Liu", "Eleftheria Kontou*"]
+  venue: "Sustainable Cities and Society"
+  volume: "82"
+  article: "103805"
+  doi: "10.1016/j.scs.2022.103805"
+  open_access: true
+  data: "https://doi.org/10.13012/B2IDB-9337369_V2"
+  themes: [vulnerability]
+  note_award: "Selected as an ITF Young Researcher of the Year 2023 finalist paper"
+  summary: >-
+    Introduces a data-driven framework that measures exposure, sensitivity,
+    and adaptive capacity to transportation energy burdens and maps
+    vulnerability across U.S. census tracts.
+  takeaway: >-
+    Electric-vehicle adoption narrows spatial disparities in transportation
+    energy vulnerability, but with diminishing returns over time.
+
+- id: ye2024tranpol
+  type: journal
+  year: 2024
+  title: "Managed residential electric vehicle charging minimizes electricity bills while meeting driver and community preferences"
+  authors: ["Tinghan Ye", "Shanshan Liu", "Eleftheria Kontou*"]
+  venue: "Transport Policy"
+  volume: "149"
+  pages: "122–138"
+  doi: "10.1016/j.tranpol.2024.01.022"
+  open_access: true
+  themes: [ev-building]
+  mentee: "Tinghan Ye"
+  summary: >-
+    A mathematical programming framework shifts home charging to low-price
+    hours using granular household energy data from Austin, Texas, while
+    honoring driver and community preferences. Under time-of-use EV tariffs,
+    optimized charging cut households' daily electricity costs by 38.9% in
+    summer and 44.3% in winter.
+
+- id: rapti2023bmb
+  type: journal
+  year: 2023
+  title: "The role of mobility in the dynamics of the COVID-19 epidemic in Andalusia"
+  authors: ["Zoi Rapti*", "Jesús Cuevas-Maraver", "Eleftheria Kontou", "Shanshan Liu", "Yannis Drossinos", "P. G. Kevrekidis", "M. Barmann", "Q.-Y. Chen", "George A. Kevrekidis"]
+  authors_short: ["Zoi Rapti*", "Jesús Cuevas-Maraver", "Eleftheria Kontou", "Shanshan Liu", "et al."]
+  venue: "Bulletin of Mathematical Biology"
+  volume: "85"
+  number: "6"
+  article: "54"
+  doi: "10.1007/s11538-023-01152-5"
+  oa: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10173246/"
+  themes: [mobility]
+  summary: >-
+    A metapopulation epidemic model of Andalusia, Spain (summer–fall 2020)
+    shows that time-dependent mobility matrices built from mobile-phone data
+    are key to capturing the emergence of the second COVID-19 wave.
+
+- id: zheng2020jat
+  type: journal
+  year: 2020
+  title: "Route design model of multiple feeder bus service based on existing bus lines"
+  authors: ["Meina Zheng", "Runxuan Zhou", "Shanshan Liu", "Feng Liu", "Xiucheng Guo"]
+  authors_short: ["Meina Zheng", "Runxuan Zhou", "Shanshan Liu", "et al."]
+  venue: "Journal of Advanced Transportation"
+  volume: "2020"
+  article: "8853872"
+  doi: "10.1155/2020/8853872"
+  open_access: true
+  oa: "https://downloads.hindawi.com/journals/jat/2020/8853872.pdf"
+  themes: [transit]
+  summary: >-
+    A three-phase tabu-search approach (area partition, stop selection, route
+    design) that uses a feeder-demand coefficient to design feeder bus routes
+    filling service gaps left by urban rail, tested in downtown Suzhou.
+
+- id: bao2026ssrn
+  type: preprint
+  year: 2026
+  title: "Weather-conditioned mobility patterns before and after New York City congestion pricing"
+  authors: ["Wencheng Bao", "Shanshan Liu*"]
+  venue: "SSRN preprint"
+  note: "Under revision at Transportation Research Part A: Policy and Practice"
+  doi: "10.2139/ssrn.7435471"
+  themes: [mobility]
+  summary: >-
+    Combines vehicle entries, taxi and ride-hail trips, subway ridership, and
+    borough weather around New York City's January 2025 congestion pricing to
+    show how calendar baselines, data-source boundaries, and weather shape
+    what such policy evaluations can and cannot conclude.
+
+- id: lei2019cictp
+  type: conference
+  year: 2019
+  title: "Analysis of transit accessibility to transportation hubs at multi-scale based on open data and ArcGIS: The case of Nanjing"
+  authors: ["Xinyue Lei", "Xiucheng Guo*", "Shanshan Liu", "Hao Chen", "Yukun Zou"]
+  authors_short: ["Xinyue Lei", "Xiucheng Guo*", "Shanshan Liu", "et al."]
+  venue: "CICTP 2019: Proceedings of the 19th COTA International Conference of Transportation Professionals"
+  venue_short: "CICTP 2019"
+  location: "Nanjing, China"
+  pages: "4449–4460"
+  doi: "10.1061/9780784482292.384"
+  themes: [transit]
+
+- id: chen2019cictp
+  type: conference
+  year: 2019
+  title: "Research on the setting of guide signs in the public transfer zone of large-scale railway integrated passenger transportation hubs"
+  authors: ["Junlan Chen", "Xiucheng Guo*", "Shanshan Liu", "Ming Yang"]
+  authors_short: ["Junlan Chen", "Xiucheng Guo*", "Shanshan Liu", "et al."]
+  venue: "CICTP 2019: Proceedings of the 19th COTA International Conference of Transportation Professionals"
+  venue_short: "CICTP 2019"
+  location: "Nanjing, China"
+  pages: "6311–6323"
+  doi: "10.1061/9780784482292.542"
+  themes: [transit]
+
+- id: liu2017cictp
+  type: conference
+  year: 2018
+  title: "Research on priority organization mode of modern tram"
+  authors: ["Shanshan Liu", "Yongtao Zheng", "Shujie Zheng", "Yu Fu", "Minshen Quan"]
+  authors_short: ["Shanshan Liu", "Yongtao Zheng", "Shujie Zheng", "et al."]
+  venue: "CICTP 2017: Proceedings of the 17th COTA International Conference of Transportation Professionals"
+  venue_short: "CICTP 2017"
+  location: "Shanghai, China"
+  pages: "1949–1959"
+  doi: "10.1061/9780784480915.206"
+  themes: [transit]
+
+- id: liu2021tram
+  type: chapter
+  year: 2021
+  title: "Analysis of traffic operation characteristics of modern trams"
+  chapter: "Ch. 3"
+  authors: ["Shanshan Liu"]
+  book: "Planning and Operation Organization Methods for Modern Tram Networks"
+  editors: "Xiucheng Guo et al"
+  editors_bib: "Guo, Xiucheng and others"
+  publisher: "Southeast University Press"
+  isbn: "978-7-5641-9960-9"
+  themes: [transit]
+
+- id: liu2020grad
+  type: chapter
+  year: 2020
+  title: "Quality management and process monitoring in graduate training"
+  chapter: "Ch. 5"
+  authors: ["Shanshan Liu"]
+  book: "Training Modes and Practice for Graduate Students in Transportation Planning"
+  editors: "Xiucheng Guo et al"
+  editors_bib: "Guo, Xiucheng and others"
+  publisher: "Southeast University Press"
+  isbn: "978-7-5641-9123-8"
+  themes: [transit]
+
+- id: liu2018hub
+  type: chapter
+  year: 2018
+  title: "Planning and design of railway passenger transport hubs"
+  chapter: "Ch. 7"
+  authors: ["Shanshan Liu"]
+  book: "Planning and Design of Urban Passenger Transport Hubs"
+  editors: "Xiucheng Guo (ed.)"
+  editors_bib: "Guo, Xiucheng"
+  publisher: "China Communications Press"
+  isbn: "978-7-114-14347-2"
+  themes: [transit]

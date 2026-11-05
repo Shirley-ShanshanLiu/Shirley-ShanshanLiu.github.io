@@ -1,0 +1,4 @@
+Newsreader — SIL Open Font License 1.1 — https://github.com/productiontype/Newsreader
+Overpass / Overpass Mono — SIL Open Font License 1.1 — https://github.com/RedHatOfficial/Overpass
+
+Self-hosted latin subsets from the @fontsource-variable packages.

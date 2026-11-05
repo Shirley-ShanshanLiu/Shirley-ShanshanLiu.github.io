@@ -1,0 +1,159 @@
+# ---------------------------------------------------------------------------
+# Research program — themes (completed + ongoing) and future directions.
+# `leg` groups stops on the home-page "research line" map:
+#   doctoral | postdoc | next
+# `pubs` lists publication ids from publications.yml.
+# ---------------------------------------------------------------------------
+
+legs:
+  - id: doctoral
+    anchor: doctoral
+    title: "Doctoral research"
+    label: "Illinois · 2020–2024"
+    intro: "Three themes that established how transportation electrification interacts with household energy burdens, building operation, and outage resilience."
+  - id: postdoc
+    anchor: postdoctoral
+    title: "Postdoctoral expansion"
+    label: "Michigan · 2024–present"
+    intro: "Extending vehicle-to-home resilience toward indoor climate exposure and health, and building physics-informed models that scale across building stocks."
+
+themes:
+  - code: T1
+    id: vulnerability
+    leg: doctoral
+    short: "Transportation energy burden"
+    title: "Who carries the transportation energy burden"
+    question: "Which communities spend the most just to get around, and how would electrification redraw that map?"
+    body: >-
+      I mapped transportation energy vulnerability for every U.S. census
+      tract by combining how exposed households are to fuel and travel costs,
+      how sensitive they are to those costs, and how able they are to adapt.
+      I then tested how much the conclusions depend on the way such an index
+      is built, and what growing EV adoption would change.
+    facts:
+      - text: "Electric-vehicle market growth reduces spatial disparities in transportation energy vulnerability, but with diminishing returns over time."
+        pub: liu2022scs
+      - text: "Geography matters: in Chicago and New York, urban populations face less transportation energy vulnerability, while in Los Angeles both city-center and rural populations carry greater burdens."
+        pub: liu2022scs
+    pubs: [liu2022scs]
+
+  - code: T2
+    id: ev-building
+    leg: doctoral
+    short: "Charging that works with buildings"
+    title: "Charging that works with buildings"
+    question: "Can buildings and the vehicles parked at them share energy instead of competing for it?"
+    body: >-
+      Cars spend most of the day parked at home or at work. I paired
+      office-building energy simulation with commuters' parking times and a
+      charging optimization model to estimate how many workplace EVs could be
+      powered by the energy that smarter HVAC and lighting controls save. In
+      an undergraduate project I mentored, we did the same for charging at
+      home.
+    facts:
+      - text: "Managed workplace charging lowers charging bills compared with first-come, first-served charging; the benefit depends on the EV-to-charger ratio, the number of EVs, and how commuters' dwell times overlap with low-price hours."
+        pub: liu2024trd
+      - text: "Optimized home charging under time-of-use EV tariffs cut households' overall daily electricity costs by 38.9% in summer and 44.3% in winter — and charging for valley filling and peak shaving also flattened the residential load curve."
+        pub: ye2024tranpol
+    pubs: [liu2024trd, ye2024tranpol]
+
+  - code: T3
+    id: resilience
+    leg: doctoral
+    short: "Vehicles as backup power"
+    title: "Vehicles as backup power"
+    question: "When the power goes out, how long can a car keep a home going — or a fleet of school buses keep a school open?"
+    body: >-
+      I simulated vehicle-to-home backup across U.S. climates, seasons, and
+      outage lengths while holding back enough charge for the trips a family
+      still has to make, and I treated electric school-bus fleets as backup
+      power plants for the schools they serve.
+    facts:
+      - text: "Even at a 50% state of charge, contemporary EVs can meet household energy needs through a 12-hour outage in spring and autumn in every climate region studied except the Midwest — and can protect residents from cold stress for multiple days during extremely severe outages."
+        pub: liu2025energy
+      - text: "Today's electric school-bus fleets cannot power a whole school, or even its HVAC system. Still, V2B emits far less carbon than diesel backup generators, and in a Houston case study, gathering students in classrooms significantly improved resilience."
+        pub: liu2025buildenv
+    pubs: [liu2025energy, liu2025buildenv]
+
+  - code: T4
+    id: health
+    leg: postdoc
+    short: "Indoor heat, cold & health"
+    title: "Indoor heat, cold, and health during outages"
+    question: "When an outage strikes during a heat wave or a cold snap, how dangerous does it get indoors — and can a parked EV help?"
+    status: "Ongoing · Michigan"
+    body: >-
+      At Michigan I study how fast homes heat up or cool down once the power
+      is gone, how long people are exposed, and what that means for health,
+      with vehicle-to-home backup as a possible protective measure.
+    related_talk: "Invited talk, INFORMS Annual Meeting 2025: “Health risks and backup power benefits under extreme weather and power outages.”"
+    pubs: []
+
+  - code: T5
+    id: physics-ai
+    leg: postdoc
+    short: "Physics-informed building models"
+    title: "Physics-informed models of how homes hold heat"
+    question: "How can we represent thousands of different homes well enough to plan for outages, without simulating each one in full detail?"
+    status: "Ongoing · Schmidt AI in Science Fellowship"
+    current: true
+    body: >-
+      As a Schmidt AI in Science Fellow, I am building compact, interpretable
+      models of residential heating and cooling that are trained on detailed
+      building simulations but constrained by physics, so resilience analysis
+      can scale from a single house to a whole housing stock.
+    pubs: []
+
+directions:
+  - code: D1
+    id: coordination
+    short: "Outage-ready vehicles & buildings"
+    title: "Outage-ready vehicles and buildings"
+    question: "How should parked vehicles and buildings be coordinated so that critical trips and safe indoor temperatures are both protected when the grid fails?"
+    body: >-
+      Turning uncertain forecasts of indoor temperatures and vehicle
+      availability into backup-power plans that households and communities
+      can rely on.
+  - code: D2
+    id: access
+    short: "Dependable, fair charging"
+    title: "Charging access people can count on"
+    question: "Where and how should charging be built so that access stays reliable and fair as EV adoption grows?"
+    body: >-
+      Looking past the number of chargers on a map to whether real trips can
+      actually be served, and planning investments that can adapt as demand
+      and the grid change.
+  - code: D3
+    id: fleets
+    short: "Grid-aware fleets & freight"
+    title: "Electric fleets that fit the grid"
+    question: "How can fleet operators plan long-lived vehicle and charger investments around day-to-day operations that keep changing?"
+    body: >-
+      Starting from depot-based fleets such as school buses and extending to
+      freight corridors, with operating plans that respect routes, batteries,
+      and grid limits.
+
+methods:
+  - name: "Physics-informed learning"
+    icon: physics
+    text: "Machine learning that respects heat-transfer and energy physics, so models stay interpretable and scale."
+  - name: "Uncertainty quantification"
+    icon: uncertainty
+    text: "Ensembles and weather and travel scenarios that show how much confidence a result deserves."
+  - name: "Decision-focused optimization"
+    icon: optimization
+    text: "Optimization that turns uncertain predictions into charging, dispatch, and investment choices."
+  - name: "Geospatial analysis"
+    icon: geo
+    text: "Tract- and parcel-level analysis that shows who is served — and who is left exposed."
+  - name: "Health-risk modeling"
+    icon: health
+    text: "Connecting indoor temperatures during outages to their consequences for health."
+
+partners:
+  - name: "National laboratories"
+    text: "National Renewable Energy Laboratory (graduate internship in long-distance freight simulation); Pacific Northwest National Laboratory (co-authored research on EV–building coupling and outage resilience)."
+  - name: "Public agencies"
+    text: "Applied planning work with provincial and municipal governments in China — Jiangsu Province, Ganzhou, Gaoping, and Suzhou — from transit network design to regulatory evaluation."
+  - name: "Across disciplines"
+    text: "Michigan Institute for Data and AI in Society; School for Environment and Sustainability and public-health collaborators on climate–health exposure; Civil and Environmental Engineering and Computational Science and Engineering at Illinois."

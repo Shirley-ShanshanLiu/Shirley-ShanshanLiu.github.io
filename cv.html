@@ -1,0 +1,190 @@
+---
+layout: default
+title: Curriculum Vitae
+slug: cv
+description: "Curriculum vitae of Shanshan (Shirley) Liu, Ph.D.: appointments, education, publications, honors, presentations, teaching, and service."
+---
+{%- assign cv = site.data.cv -%}
+{%- assign pubs = site.data.publications -%}
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="label">Curriculum vitae</p>
+    <h1>Shanshan (Shirley) Liu, Ph.D.</h1>
+    <p class="lede">
+      {{ site.author.role }}, {{ site.author.unit }}, {{ site.author.institution }}.
+      <span class="ui" style="display:block; margin-top:10px; font-size:1rem">
+        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        {%- if site.links.scholar != "" %}<span class="sep" aria-hidden="true">·</span><a href="{{ site.links.scholar }}" rel="me noopener">Google Scholar</a>{% endif %}
+        {%- if site.links.orcid != "" %}<span class="sep" aria-hidden="true">·</span><a href="{{ site.links.orcid }}" rel="me noopener">ORCID</a>{% endif %}
+        <span class="sep" aria-hidden="true">·</span>{{ site.url | remove: "https://" }}
+      </span>
+    </p>
+    <div class="hero-actions">
+      <button class="btn" type="button" data-print><svg aria-hidden="true"><use href="#i-print"/></svg>Print or save as PDF</button>
+      {%- if site.cv_pdf != "" %}
+      <a class="btn btn--ghost" href="{{ site.cv_pdf | relative_url }}"><svg aria-hidden="true"><use href="#i-cv"/></svg>Download PDF</a>
+      {%- else %}
+      <a class="btn btn--ghost" href="mailto:{{ site.author.email }}?subject=CV%20request"><svg aria-hidden="true"><use href="#i-mail"/></svg>Request full CV</a>
+      {%- endif %}
+    </div>
+    <ul class="toc" aria-label="Sections">
+      <li><a href="#appointments">Appointments</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Research experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Honors</a></li>
+      <li><a href="#convenings">Convenings</a></li>
+      <li><a href="#talks">Presentations</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  {%- assign blocks = "appointments|Appointments,education|Education,research_experience|Research experience" | split: "," -%}
+  {%- for b in blocks -%}
+  {%- assign bp = b | split: "|" -%}
+  <section class="cv-section" id="{% if bp[0] == 'research_experience' %}experience{% else %}{{ bp[0] }}{% endif %}" aria-labelledby="cv-{{ bp[0] }}">
+    <h2 id="cv-{{ bp[0] }}">{{ bp[1] }}</h2>
+    {%- assign key = bp[0] -%}
+    {%- assign items = cv[key] -%}
+    <ul class="cv-list">
+      {%- for i in items -%}
+      <li class="cv-item">
+        <span class="what">{{ i.what }}</span>
+        <span class="where">{{ i.where }}</span>
+        <span class="when">{{ i.when }}</span>
+        {%- if i.detail %}<div class="detail">{{ i.detail }}</div>{% endif %}
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  {%- endfor -%}
+
+  <section class="cv-section" id="publications" aria-labelledby="cv-pubs">
+    <h2 id="cv-pubs">Publications</h2>
+    <div>
+      {%- assign groups = "journal|Journal articles,preprint|Preprints and manuscripts under review,conference|Conference proceedings,chapter|Book chapters" | split: "," -%}
+      {%- for g in groups -%}
+      {%- assign gp = g | split: "|" -%}
+      {%- assign list = pubs | where: "type", gp[0] -%}
+      <h3 class="label" style="margin: {% if forloop.first %}0{% else %}26px{% endif %} 0 12px">{{ gp[1] }}</h3>
+      <ol class="cv-list" style="gap:14px; list-style: decimal; padding-left: 1.4em">
+        {%- for p in list -%}
+        <li style="font-size:1rem">
+          {% include authors.html authors=p.authors %} ({{ p.year }}).
+          {% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}.
+          {%- case p.type -%}
+          {%- when "chapter" %} {{ p.chapter }} in <i>{{ p.book }}</i>, {{ p.editors }}. {{ p.publisher }}. ISBN {{ p.isbn }}.
+          {%- when "conference" %} <i>{{ p.venue_short }}</i>{% if p.location %}, {{ p.location }}{% endif %}, pp. {{ p.pages }}.
+          {%- when "preprint" %} <i>{{ p.venue }}</i>.{% if p.note %} {{ p.note }}.{% endif %}
+          {%- else %} <i>{{ p.venue }}</i>{% if p.volume %} {{ p.volume }}{% endif %}{% if p.number %}({{ p.number }}){% endif %}{% if p.article %}: {{ p.article }}{% endif %}{% if p.pages %}: {{ p.pages }}{% endif %}.
+          {%- endcase %}
+        </li>
+        {%- endfor -%}
+      </ol>
+      {%- endfor -%}
+      <p class="cv-note" style="margin-top:20px">Bold marks Shanshan Liu; * marks the corresponding author. Annotated list with summaries and BibTeX: <a href="{{ '/publications.html' | relative_url }}">Publications</a>.</p>
+    </div>
+  </section>
+
+  <section class="cv-section" id="awards" aria-labelledby="cv-awards">
+    <h2 id="cv-awards">Honors &amp; awards</h2>
+    <ul class="cv-list">
+      {%- for a in cv.awards -%}
+      <li class="cv-item">
+        <span class="what">{% if a.url %}<a href="{{ a.url }}">{{ a.what }}</a>{% else %}{{ a.what }}{% endif %}</span>
+        <span class="where">{{ a.who }}</span>
+        <span class="when">{{ a.year }}</span>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  <section class="cv-section" id="convenings" aria-labelledby="cv-conv">
+    <h2 id="cv-conv">Convening support</h2>
+    <ul class="cv-list">
+      {%- for c in cv.convenings -%}
+      <li class="cv-item">
+        <span class="what">{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</span>
+        <span class="where">{{ c.funder }}<span class="sep" aria-hidden="true">·</span>{{ c.role }}</span>
+        <span class="when">{{ c.when }}</span>
+        {%- if c.detail != "" %}<div class="detail">{{ c.detail }}</div>{% endif %}
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  <section class="cv-section" id="talks" aria-labelledby="cv-talks">
+    <h2 id="cv-talks">Presentations &amp; talks</h2>
+    <div>
+      <h3 class="label" style="margin: 0 0 12px">Invited conference presentations</h3>
+      <ul class="cv-list">
+        {%- for t in cv.talks_invited -%}
+        <li class="cv-item">
+          <span class="what">{% if t.title != "" %}“{{ t.title | capitalize }}”{% else %}Invited presentation{% endif %}</span>
+          <span class="where">{{ t.venue }}, {{ t.place }}</span>
+          <span class="when">{{ t.when }}</span>
+        </li>
+        {%- endfor -%}
+      </ul>
+      <h3 class="label" style="margin: 28px 0 12px">Seminars &amp; guest lectures</h3>
+      <ul class="cv-list">
+        {%- for t in cv.talks_seminars -%}
+        <li class="cv-item">
+          <span class="what">{{ t.title }}</span>
+          <span class="where">{{ t.venue }}</span>
+          <span class="when">{{ t.when }}</span>
+        </li>
+        {%- endfor -%}
+      </ul>
+      <h3 class="label" style="margin: 28px 0 12px">Selected conference presentations</h3>
+      <ul class="cv-list">
+        {%- for t in cv.talks_conference -%}
+        <li class="cv-item">
+          <span class="what">{{ t.title }}</span>
+          {%- if t.venue != "" %}<span class="where">{{ t.venue }}{% if t.note %}<span class="sep" aria-hidden="true">·</span>{{ t.note }}{% endif %}</span>{% endif %}
+          <span class="when">{{ t.when }}</span>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-section" id="teaching" aria-labelledby="cv-teaching">
+    <h2 id="cv-teaching">Teaching &amp; mentoring</h2>
+    <ul class="cv-list">
+      <li class="cv-item">
+        <span class="what">Instructor, AI for Scientists and Engineers Summer Academy</span>
+        <span class="where">MIDAS, University of Michigan — <i>Evaluating ML Models and Model Selection</i></span>
+        <span class="when">Jul 2026</span>
+      </li>
+      <li class="cv-item">
+        <span class="what">Undergraduate research mentor</span>
+        <span class="where">University of Illinois Urbana-Champaign — Tinghan Ye (managed EV charging; <i>Transport Policy</i>, 2024) and Chen Si (residential V2G, URAP)</span>
+        <span class="when">2021 – 2022</span>
+      </li>
+      <li class="cv-item">
+        <span class="what">Teaching assistant, Basic Theories of Modern Transport Management</span>
+        <span class="where">Southeast University</span>
+        <span class="when">Spring 2018</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="cv-section" id="service" aria-labelledby="cv-service">
+    <h2 id="cv-service">Service &amp; leadership</h2>
+    <ul class="cv-list">
+      {%- for s in cv.service -%}
+      <li class="cv-item">
+        <span class="what">{{ s.what }}</span>
+        {%- if s.detail %}<span class="where">{{ s.detail }}</span>{% endif %}
+        {%- if s.when %}<span class="when">{{ s.when }}</span>{% endif %}
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+  <div style="height: clamp(40px, 6vw, 80px)"></div>
+</div>

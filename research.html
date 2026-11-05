@@ -1,0 +1,183 @@
+---
+layout: default
+title: Research
+slug: research
+description: "Research by Shanshan (Shirley) Liu on EV–building energy coupling, vehicle backup power in outages, energy equity, and physics-informed building models."
+---
+{%- assign research = site.data.research -%}
+{%- assign pubs = site.data.publications -%}
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="label">Research</p>
+    <h1>Vehicles, buildings, and the grid&nbsp;— planned as one system</h1>
+    <p class="lede">
+      Electric vehicles are becoming part of the power system whether or not we plan for it. I build the models and
+      decision tools needed to plan and run vehicles, buildings, and the grid as one system — so that people can still
+      get where they need to go, and homes and schools stay safe, when storms and outages hit.
+    </p>
+    <ul class="toc" aria-label="On this page">
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#doctoral">Doctoral themes</a></li>
+      <li><a href="#postdoctoral">Postdoctoral themes</a></li>
+      <li><a href="#next">Next directions</a></li>
+      <li><a href="#foundations">Foundations</a></li>
+      <li><a href="#collaborations">Collaborations</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============================== APPROACH ============================== -->
+<section class="section" id="approach" aria-labelledby="approach-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Approach</p>
+      <h2 id="approach-title">Models that earn their place in a decision</h2>
+      <p>
+        I trained as a transportation engineer — network modeling, optimization, and spatial analysis — with a doctoral
+        focus on computational science, and at Michigan I have added physics-informed machine learning. What ties these
+        together is a simple test: a model matters only if it improves a real decision. So I care as much about when a model
+        can be trusted to guide charging, dispatch, or investment as about how accurate it is on paper.
+      </p>
+    </header>
+    <ul class="methods">
+      {%- for m in research.methods -%}
+      <li>
+        {%- case m.icon -%}
+        {%- when "physics" -%}
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 30 C12 30 14 10 20 10 S28 30 34 30"/><circle cx="20" cy="10" r="2.5"/><path d="M6 34 H34" stroke-dasharray="2 4"/></svg>
+        {%- when "uncertainty" -%}
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 30 C12 30 15 12 20 12 S28 30 35 30"/><path d="M5 30 C11 30 14 18 20 18 S29 30 35 30" opacity=".55"/><path d="M5 30 C10 30 14 6 20 6 S30 30 35 30" opacity=".35"/></svg>
+        {%- when "optimization" -%}
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 8 L34 8 L26 22 L14 22 Z"/><path d="M14 22 L20 33 L26 22"/><circle cx="20" cy="33" r="2.5"/></svg>
+        {%- when "geo" -%}
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 8 H18 V20 H6 Z M22 8 H34 V20 H22 Z M6 24 H18 V34 H6 Z M22 24 H34 V34 H22 Z"/><circle cx="28" cy="14" r="2.5"/></svg>
+        {%- when "health" -%}
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M17 6 V24 a6 6 0 1 0 6 0 V6 a3 3 0 0 0 -6 0 Z"/><path d="M20 14 V28"/><path d="M28 12 H34 M28 18 H33"/></svg>
+        {%- endcase -%}
+        <h3>{{ m.name }}</h3>
+        <p>{{ m.text }}</p>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== THEMES ============================== -->
+{%- for L in research.legs -%}
+<section class="section{% if forloop.last %} section--tint{% endif %}" id="{{ L.anchor }}" aria-labelledby="leg-{{ L.id }}">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">{{ L.label }}</p>
+      <h2 id="leg-{{ L.id }}">{{ L.title }}</h2>
+      <p>{{ L.intro }}</p>
+    </header>
+    {%- assign ts = research.themes | where: "leg", L.id -%}
+    {%- for t in ts -%}
+    <article class="theme" id="{{ t.id }}" style="--stop: {% if t.leg == 'doctoral' %}var(--mobility){% else %}var(--amber){% endif %}" aria-labelledby="h-{{ t.id }}">
+      <div class="theme-index">
+        <span class="code">{{ t.code }}</span>
+        {% include glyph.html id=t.id %}
+        {%- if t.status %}<span class="status">{{ t.status }}</span>{% endif %}
+      </div>
+      <div>
+        <h3 id="h-{{ t.id }}">{{ t.title }}</h3>
+        <p class="rq">{{ t.question }}</p>
+        <div class="body"><p>{{ t.body }}</p></div>
+        {%- if t.facts -%}
+        <ul class="facts">
+          {%- for f in t.facts -%}
+          {%- assign fp = pubs | where: "id", f.pub | first -%}
+          <li>{{ f.text }}<cite>{{ fp.authors[0] | remove: "*" | split: " " | last }}{% if fp.authors.size == 2 %} &amp; {{ fp.authors[1] | remove: "*" | split: " " | last }}{% else %} et al.{% endif %}, <a href="https://doi.org/{{ fp.doi }}"><i>{{ fp.venue_short | default: fp.venue }}</i>, {{ fp.year }}</a></cite></li>
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+        {%- if t.related_talk %}
+        <p class="related">{{ t.related_talk }}</p>
+        {%- endif %}
+        {%- if t.pubs.size > 0 %}
+        <p class="related">Read: {% for id in t.pubs %}{% assign rp = pubs | where: "id", id | first %}<a href="{{ '/publications.html' | relative_url }}#{{ rp.id }}">{{ rp.venue_short | default: rp.venue }} ({{ rp.year }})</a>{% unless forloop.last %}<span class="sep" aria-hidden="true">·</span>{% endunless %}{% endfor %}</p>
+        {%- endif %}
+      </div>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endfor -%}
+
+<!-- ============================== NEXT ============================== -->
+<section class="section" id="next" aria-labelledby="next-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Next directions</p>
+      <h2 id="next-title">From nominal capacity to dependable service</h2>
+      <p>
+        Electricity demand is climbing, cars that can send power back to a home are reaching the market, and extreme weather
+        keeps revealing how tightly transportation, buildings, and the grid are tied together. The next step is to move from
+        what a battery could do in principle to service that people can rely on. I plan to pursue three directions — and in
+        each, fairness is part of the engineering: who benefits, who pays, and who is left exposed are outcomes to measure.
+      </p>
+    </header>
+    <ol class="directions">
+      {%- for d in research.directions -%}
+      <li class="direction" id="{{ d.id }}">
+        {% include glyph.html id=d.id %}
+        <span class="code">{{ d.code }}</span>
+        <h3>{{ d.title }}</h3>
+        <p class="rq">{{ d.question }}</p>
+        <p>{{ d.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== FOUNDATIONS ============================== -->
+<section class="section section--tint" id="foundations" aria-labelledby="foundations-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Foundations · Southeast University, 2013–2020</p>
+      <h2 id="foundations-title">Rooted in transportation planning practice</h2>
+      <p>
+        Before energy systems, I trained in traffic and transportation engineering in Nanjing — designing feeder-bus routes,
+        transit priority for modern trams, and passenger flows through railway hubs — and worked on applied planning projects
+        for provincial and municipal governments. That grounding in how real networks are planned and operated still shapes
+        how I frame energy questions around service to travelers.
+      </p>
+    </header>
+    <ul class="partners">
+      <li>
+        <h3>Transit network design</h3>
+        <p>A tabu-search route-design model for feeder buses that fill service gaps left by urban rail, tested in Suzhou (<a href="{{ '/publications.html' | relative_url }}#zheng2020jat"><i>Journal of Advanced Transportation</i>, 2020</a>); rural and integrated urban–rural bus networks for Ganzhou and Gaoping.</p>
+      </li>
+      <li>
+        <h3>Hubs, trams &amp; accessibility</h3>
+        <p>Signal-priority schemes for modern trams, transit accessibility to railway hubs from open data, and wayfinding in large railway transfer zones (CICTP 2017, 2019), plus three book chapters on trams, passenger hubs, and graduate training.</p>
+      </li>
+      <li>
+        <h3>Policy &amp; evaluation</h3>
+        <p>A Jiangsu provincial transportation strategy identifying multimodal bottlenecks, and multi-criteria evaluation of 700+ regulatory items with recommendations to regional governments.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== COLLABORATIONS ============================== -->
+<section class="section" id="collaborations" aria-labelledby="collab-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">Collaborations</p>
+      <h2 id="collab-title">Working across labs, agencies, and disciplines</h2>
+      <p>I work across transportation, energy, building science, and public health, and I welcome partners — utilities, fleet operators, and cities — who want to put these methods to work on real operating data.</p>
+    </header>
+    <ul class="partners">
+      {%- for p in research.partners -%}
+      <li><h3>{{ p.name }}</h3><p>{{ p.text }}</p></li>
+      {%- endfor -%}
+    </ul>
+    <div class="section-foot">
+      <a class="btn" href="mailto:{{ site.author.email }}"><svg aria-hidden="true"><use href="#i-mail"/></svg>Start a conversation</a>
+      <a class="btn btn--ghost" href="{{ '/publications.html' | relative_url }}">Browse publications</a>
+    </div>
+  </div>
+</section>

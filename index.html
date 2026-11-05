@@ -1,131 +1,291 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shanshan (Shirley) Liu | Academic Homepage</title>
-  <meta name="description" content="Academic homepage of Shanshan (Shirley) Liu" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <div class="logo" aria-hidden="true"></div>
-        <strong>Shanshan (Shirley) Liu</strong>
-      </a>
-      <nav>
-        <a href="publications.html">Publications</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="awards.html">Awards</a>
-        <a href="presentations.html">Presentations</a>
-        <a href="cv.pdf">CV</a>
-        <a href="#" id="themeToggle" title="Toggle theme">🌓</a>
-      </nav>
+---
+layout: default
+slug: home
+description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging, vehicle-to-home and vehicle-to-building backup power, energy equity, and grid resilience."
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign research = site.data.research -%}
+
+<!-- ============================== HERO ============================== -->
+<section class="hero masthead" aria-labelledby="hero-name">
+  <div class="wrap">
+    <h1 id="hero-name" class="masthead-name">Shanshan <span class="paren">(Shirley)</span> Liu</h1>
+    <div class="masthead-body">
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <picture>
+            <source type="image/avif" srcset="{{ '/assets/img/portrait-480.avif' | relative_url }} 480w, {{ '/assets/img/portrait-800.avif' | relative_url }} 800w" sizes="(max-width: 700px) 96px, 240px">
+            <source type="image/webp" srcset="{{ '/assets/img/portrait-480.webp' | relative_url }} 480w, {{ '/assets/img/portrait-800.webp' | relative_url }} 800w" sizes="(max-width: 700px) 96px, 240px">
+            <img src="{{ '/assets/img/portrait-480.jpg' | relative_url }}" srcset="{{ '/assets/img/portrait-480.jpg' | relative_url }} 480w, {{ '/assets/img/portrait-800.jpg' | relative_url }} 800w" sizes="(max-width: 700px) 96px, 240px" width="480" height="600" alt="Portrait of Shanshan (Shirley) Liu" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
+      </figure>
+      <p class="hero-lede">
+        I build models and decision tools that treat electric vehicles as part of the energy system —
+        so that vehicles, buildings, and the grid can <em>keep communities moving and safe</em>
+        when climate and infrastructure fail.
+      </p>
+      <dl class="spec">
+        <div><dt>Now</dt><dd>Schmidt AI in Science Postdoctoral Fellow, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan</dd></div>
+        <div><dt>Trained as</dt><dd>Transportation engineer — Ph.D., Civil Engineering, University of Illinois Urbana-Champaign (2024)</dd></div>
+        <div><dt>Works on</dt><dd>EV charging and building energy, vehicle-to-home and vehicle-to-building backup power, transportation energy equity, and physics-informed models</dd></div>
+        <div><dt>Record</dt><dd>{% include pub-counts.html %}<a href="{{ '/publications.html' | relative_url }}">{{ n_journal }} journal articles, {{ n_journal_first }} as first author</a><span class="sep" aria-hidden="true">·</span><a href="#recognition">ITF Young Researcher of the Year finalist</a><span class="sep" aria-hidden="true">·</span><a href="#recognition">Lee Schipper Scholar</a> (2023)</dd></div>
+      </dl>
+      <div class="hero-actions">
+        <a class="btn" href="{{ '/research.html' | relative_url }}">Explore the research</a>
+        <a class="btn btn--ghost" href="mailto:{{ site.author.email }}"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+        {%- if site.links.scholar != "" %}
+        <a class="btn btn--ghost" href="{{ site.links.scholar }}" rel="me noopener"><svg aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar</a>
+        {%- endif %}
+        <a class="btn btn--ghost" href="{{ '/cv.html' | relative_url }}"><svg aria-hidden="true"><use href="#i-cv"/></svg>CV</a>
+      </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main class="container">
-    <section class="hero grid grid-2">
-      <div class="card">
-        <div style="display:flex; gap:16px; align-items:center">
-          <div class="avatar">
-            <img src="me.jpg" alt="Shanshan (Shirley) Liu">
-            <!-- <span>SL</span> -->
+<!-- ============================== QUESTION ============================== -->
+<section class="question" aria-labelledby="q-label">
+  <div class="wrap">
+    <div>
+      <p class="label" id="q-label">The question behind my work</p>
+      <blockquote>
+        Can the electric vehicles filling our roads make getting around better — <em>and make the energy systems</em> communities depend on stronger, not more strained?
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== THREE ROLES ============================== -->
+<section class="section" id="roles" aria-labelledby="roles-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">01 — What I study</p>
+      <h2 id="roles-title">One vehicle, three roles</h2>
+      <p>Switch between roles to see how the same battery serves travel, the grid, and a building in an outage — and what my published work has found about each.</p>
+    </header>
+
+    <div data-roles>
+    <div class="roles-bar">
+      <div class="tabs" role="tablist" aria-label="Roles of an electric vehicle">
+          <button class="tab" role="tab" id="tab-mobility" aria-controls="panel-mobility" aria-selected="true" data-mode="mobility"><span class="n">01</span>Mobility</button>
+          <button class="tab" role="tab" id="tab-load" aria-controls="panel-load" aria-selected="false" tabindex="-1" data-mode="load"><span class="n">02</span>Flexible load</button>
+          <button class="tab" role="tab" id="tab-backup" aria-controls="panel-backup" aria-selected="false" tabindex="-1" data-mode="backup"><span class="n">03</span>Backup power</button>
+        </div>
+    </div>
+    <div class="roles">
+      <figure class="roles-figure">
+        {% include system-diagram.svg %}
+        <figcaption>
+          <span class="key key--mobility"><i></i>Trips</span>
+          <span class="key key--energy"><i></i>Energy flow</span>
+          <span class="key key--out"><i></i>Grid outage</span>
+          <button class="anim-toggle" type="button" aria-pressed="false">Pause animation</button>
+          <span class="sys-places">Left to right: power grid, home, office, school</span>
+        </figcaption>
+      </figure>
+
+      <div>
+        <div class="panel" id="panel-mobility" role="tabpanel" aria-labelledby="tab-mobility" data-accent="mobility" tabindex="0">
+          <p class="label">Role 01 · A mobility resource</p>
+          <h3>Every kilowatt-hour has a trip attached</h3>
+          <p>Before a car or a school bus can help a building or the grid, it still has to get people where they need to go. My models carry daily travel needs through every energy decision — and ask who bears the cost of getting around in the first place.</p>
+          <div class="finding">
+            <p>Electric-vehicle adoption narrows spatial disparities in U.S. transportation energy vulnerability — but with diminishing returns over time.</p>
+            <cite>Liu &amp; Kontou, <a href="https://doi.org/10.1016/j.scs.2022.103805"><i>Sustainable Cities and Society</i>, 2022</a></cite>
           </div>
-          <div>
-            <div class="kicker">Hello</div>
-            <h1>I’m <span style="color:var(--accent)">Shanshan (Shirley) Liu</span></h1>
-            <p class="subtitle">Transportation Engineering & Energy Systems · University of Michigan</p>
-            <div class="pills">
-              <span class="pill">Sustainable Transportation</span>
-              <span class="pill">ML/AI for Transportation</span>
-              <span class="pill">Transport–Energy Integration</span>
-              <span class="pill">AV/EV/Shared Mobility</span>
-              <span class="pill">Mobility & Energy Equity</span>
-            </div>
+        </div>
+
+        <div class="panel" id="panel-load" role="tabpanel" aria-labelledby="tab-load" data-accent="load" tabindex="0">
+          <p class="label">Role 02 · A flexible load</p>
+          <h3>Charging when and where it helps</h3>
+          <p>Most charging happens where people live and work. I pair charging with building operation — HVAC setpoints, daylighting, time-of-use prices — so vehicles soak up cheap, spare energy instead of adding to the peak.</p>
+          <div class="finding">
+            <p>Managing workplace charging together with office-building loads lowers charging bills compared with first-come, first-served charging.</p>
+            <cite>Liu, Vlachokostas, Si &amp; Kontou, <a href="https://doi.org/10.1016/j.trd.2024.104317"><i>Transportation Research Part D</i>, 2024</a></cite>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-backup" role="tabpanel" aria-labelledby="tab-backup" data-accent="backup" tabindex="0">
+          <p class="label">Role 03 · A source of backup power</p>
+          <h3>When the grid goes dark</h3>
+          <p>With vehicle-to-home and vehicle-to-building technology, a parked battery can help carry a household — and supply critical loads at a school — through an outage, as long as we account for the trips it must still make and the heating or cooling the building needs.</p>
+          <div class="finding">
+            <p>Even at 50% charge, today’s EVs can carry a home through a 12-hour outage in spring and autumn in every U.S. climate region studied except the Midwest.</p>
+            <cite>Liu, Vlachokostas &amp; Kontou, <a href="https://doi.org/10.1016/j.energy.2025.134613"><i>Energy</i>, 2025</a>; on school buses, see <a href="https://doi.org/10.1016/j.buildenv.2024.112329"><i>Building and Environment</i>, 2025</a></cite>
           </div>
         </div>
       </div>
-      <div class="card">
-        <h2>Featured Research</h2>
-        <div class="list">
-          <div>
-            <h3>Electrified School Buses & Community Microgrids</h3>
-            <div class="meta">Energy resilience · grid-aware scheduling · equity impacts</div>
-          </div>
-          <div>
-            <h3>Predictive Analytics for EV Adoption & Shared Mobility</h3>
-            <div class="meta">Behavioral modeling · spatial–temporal ML</div>
-          </div>
-          <div>
-            <h3>Transportation–Energy Co-Optimization</h3>
-            <div class="meta">Charging infrastructure planning · renewable integration</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+    </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>News</h2>
-      <ul class="list">
-        <li><strong>2025-09</strong> — Paper accepted on AI-enhanced landslide displacement prediction. <span class="meta">Acta Geotechnica</span></li>
-        <li><strong>2025-08</strong> — Released open-source tools for EV adoption analytics. <span class="meta"><a href="#" class="meta">GitHub</a></span></li>
+<!-- ============================== RESEARCH LINE ============================== -->
+<section class="section section--tint" id="program" aria-labelledby="program-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">02 — Research program</p>
+      <h2 id="program-title">One line, from doctoral work to what comes next</h2>
+      <p>Read it like a transit map: each stop is a research theme. Solid lines are built; the dashed line marks the directions I plan to pursue next.</p>
+    </header>
+
+    <div class="arc">
+      <div class="arc-legs" aria-hidden="true">
+        <div class="arc-leg"><span class="label">Doctoral</span><strong>University of Illinois</strong><span class="when">2020 – 2024</span></div>
+        <div class="arc-leg"><span class="label">Postdoctoral</span><strong>University of Michigan</strong><span class="when">2024 – present</span></div>
+        <div class="arc-leg"><span class="label">Next</span><strong>Future directions</strong><span class="when">Planned</span></div>
+      </div>
+      <ol class="arc-line">
+        {%- for t in research.themes -%}
+          {%- assign leg_label = "" -%}
+          {%- if forloop.first -%}{%- assign leg_label = "Doctoral · Illinois, 2020–2024" -%}{%- endif -%}
+          {%- if t.code == "T4" -%}{%- assign leg_label = "Postdoctoral · Michigan, 2024–" -%}{%- endif -%}
+        <li class="stop {% if t.leg == 'doctoral' %}stop--t{% else %}stop--p{% endif %}{% if t.current %} is-current{% endif %}" data-seg="{% if t.code == 'T3' %}tp{% elsif t.code == 'T5' %}pd{% elsif t.leg == 'doctoral' %}t{% else %}p{% endif %}"{% if leg_label != "" %} data-leg="{{ leg_label }}"{% endif %}>
+          <a href="{{ '/research.html' | relative_url }}#{{ t.id }}">
+            <span class="visually-hidden">{% if t.leg == 'doctoral' %}Doctoral theme{% else %}Postdoctoral theme{% endif %}{% if t.current %}, current{% endif %}: </span>
+            <span class="code" aria-hidden="true">{{ t.code }}{% if t.current %} · now{% endif %}</span>
+            <span class="name">{{ t.short }}</span>
+          </a>
+        </li>
+        {%- endfor -%}
+        {%- for d in research.directions -%}
+        <li class="stop stop--d is-future" data-seg="{% if forloop.last %}end{% else %}d{% endif %}"{% if forloop.first %} data-leg="Next · planned directions"{% endif %}>
+          <a href="{{ '/research.html' | relative_url }}#{{ d.id }}">
+            <span class="visually-hidden">Planned direction: </span>
+            <span class="code" aria-hidden="true">{{ d.code }}</span>
+            <span class="name">{{ d.short }}</span>
+          </a>
+        </li>
+        {%- endfor -%}
+      </ol>
+      <div class="arc-methods">
+        <span class="label">Methods I combine</span>
+        {%- for m in research.methods %}
+        <span class="chip">{{ m.name }}</span>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SELECTED WORK ============================== -->
+<section class="section" id="selected" aria-labelledby="selected-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">03 — Selected publications</p>
+      <h2 id="selected-title">First-author evidence</h2>
+      <p>Four peer-reviewed papers that trace the line from who is burdened, to how charging can be managed, to how vehicles can back up homes and schools.</p>
+    </header>
+    <ul class="works">
+      {%- assign selected = pubs | where: "selected", true -%}
+      {%- for p in selected -%}
+      {%- assign theme = research.themes | where: "id", p.themes[0] | first -%}
+      <li class="work reveal">
+        <div class="top">
+          <span class="venue">{{ p.venue_short | default: p.venue }}</span>
+          <span class="year">{{ p.year }}</span>
+        </div>
+        <h3><a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a></h3>
+        <p class="takeaway">{{ p.summary }}</p>
+        {%- if p.note_award %}
+        <p class="award-note">{{ p.note_award }}</p>
+        {%- endif %}
+        <p class="authors">
+          {%- if theme %}<span class="label">{{ theme.code }} · {{ theme.short }}</span><br>{% endif -%}
+          {% include authors.html authors=p.authors %}
+        </p>
+      </li>
+      {%- endfor -%}
+    </ul>
+    <div class="section-foot">
+      <a class="arrow-link" href="{{ '/publications.html' | relative_url }}">All publications, preprints &amp; chapters</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RECOGNITION ============================== -->
+<section class="section section--tint" id="recognition" aria-labelledby="recognition-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="label">04 — Recognition</p>
+      <h2 id="recognition-title">Honors and communities convened</h2>
+    </header>
+    <ul class="honors">
+      {%- assign hl = site.data.cv.awards | where: "highlight", true -%}
+      {%- for a in hl -%}
+      <li>
+        <span class="yr">{{ a.year }}</span>
+        <span class="what">{% if a.url %}<a href="{{ a.url }}">{{ a.short | default: a.what }}</a>{% else %}{{ a.short | default: a.what }}{% endif %}</span>
+        <span class="who">{{ a.who }}</span>
+      </li>
+      {%- endfor -%}
+    </ul>
+    <div class="convenings">
+      {%- for c in site.data.cv.convenings -%}
+      <article class="convening">
+        <p class="label">{{ c.role }} · {{ c.when }}</p>
+        <h3>{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
+        <p>Funded by {{ c.funder }}.{% if c.detail != "" %} {{ c.detail }}{% endif %}</p>
+      </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RECENT + TEACHING ============================== -->
+<section class="section" id="recent" aria-labelledby="recent-title">
+  <div class="wrap split">
+    <div>
+      <header class="section-head section-head--stack">
+        <p class="label">05 — Recent</p>
+        <h2 id="recent-title">Latest activity</h2>
+      </header>
+      <ol class="timeline">
+        {%- for n in site.data.news -%}
+        <li data-k="{{ n.kind }}">
+          <time datetime="{{ n.iso | default: n.date }}">{{ n.date }}</time>
+          <div class="what">
+            <span class="kind">{% case n.kind %}{% when 'paper' %}Publication{% when 'talk' %}Talk{% when 'teaching' %}Teaching{% when 'role' %}Appointment{% when 'award' %}Award{% endcase %}</span>
+            {{ n.text }}
+          </div>
+        </li>
+        {%- endfor -%}
+      </ol>
+    </div>
+    <div>
+      <header class="section-head section-head--stack">
+        <p class="label">06 — Teaching &amp; mentoring</p>
+        <h2>Building the next cohort</h2>
+      </header>
+      <div class="prose">
+        <p>I teach and mentor at the meeting point of engineering and data science — most recently as an instructor in the MIDAS <em>AI for Scientists and Engineers</em> Summer Academy, where I taught model evaluation and selection to an interdisciplinary audience of researchers.</p>
+        <p>Both undergraduates I mentored at Illinois co-authored journal articles and continued to graduate school — one is now a Ph.D. candidate at Georgia Tech.</p>
+      </div>
+      <ul class="facts-mini">
+        <li><span class="k">Instructor</span><span><b>MIDAS AI for Scientists &amp; Engineers Summer Academy</b><span class="sep" aria-hidden="true">·</span>2026</span></li>
+        <li><span class="k">Mentoring</span><span><b>Two undergraduates</b> → journal co-authorship, then graduate school</span></li>
+        <li><span class="k">Seminars</span><span>Illinois CEE (2023)<span class="sep" aria-hidden="true">·</span>Michigan SEAS (2025)<span class="sep" aria-hidden="true">·</span>Michigan CEE (2026)</span></li>
       </ul>
-    </section>
+      <p style="margin-top:22px"><a class="arrow-link" href="{{ '/teaching.html' | relative_url }}">Teaching, mentoring &amp; service</a></p>
+    </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>Selected Publications</h2>
-      <div class="list">
-        <div>
-          <h3>Title of a representative paper</h3>
-          <div class="meta">Author A, <strong>Liu, S.</strong>, Author C · Journal · 2024 · <a href="#">PDF</a> · <a href="#">Code</a></div>
-        </div>
-        <div>
-          <h3>Another representative paper</h3>
-          <div class="meta">Author A, <strong>Liu, S.</strong> · Conference · 2023 · <a href="#">PDF</a></div>
-        </div>
-      </div>
-      <p class="muted" style="margin-top:8px">Full list: <a href="publications.html">Publications</a></p>
-    </section>
-
-    <section class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a> · Ann Arbor, MI</p>
-      <div class="pills">
-        <a class="btn" href="https://scholar.google.com/citations?user=64vXCmkAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-        <a class="btn" href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-    </section>
-
-    <footer class="container">
-      <p>© <span id="year"></span> Shanshan (Shirley) Liu · Powered by GitHub Pages</p>
-    </footer>
-  </main>
-
-  <script>
-(function(){
-  const root = document.documentElement;
-  const saved = localStorage.getItem('theme');
-  if(saved === 'light') root.classList.add('light');
-
-  const t = document.getElementById('themeToggle');
-  if(t){
-    t.addEventListener('click', function(e){
-      e.preventDefault();
-      root.classList.toggle('light');
-      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-    });
-  }
-
-  const y = document.getElementById('year');
-  if(y) y.textContent = new Date().getFullYear();
-})();
-</script>
-
-</body>
-</html>
+<!-- ============================== CONTACT ============================== -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div>
+      <p class="label">Get in touch</p>
+      <h2 id="contact-title">Let’s talk about resilient, electrified mobility.</h2>
+      <p>I welcome conversations about collaboration, seminars, and partnerships with utilities, fleets, cities, and fellow researchers.</p>
+    </div>
+    <ul class="contact-list">
+      <li><a href="mailto:{{ site.author.email }}"><span class="k">Email</span><span class="v">{{ site.author.email }}</span></a></li>
+      {%- if site.links.scholar != "" %}<li><a href="{{ site.links.scholar }}" rel="me noopener"><span class="k">Google Scholar</span><span class="v">Citations &amp; profile <span aria-hidden="true">↗</span></span></a></li>{% endif %}
+      {%- if site.links.orcid != "" %}<li><a href="{{ site.links.orcid }}" rel="me noopener"><span class="k">ORCID</span><span class="v">{{ site.links.orcid | remove: "https://orcid.org/" }} <span aria-hidden="true">↗</span></span></a></li>{% endif %}
+      {%- if site.links.midas != "" %}<li><a href="{{ site.links.midas }}" rel="noopener"><span class="k">MIDAS</span><span class="v">Fellow profile <span aria-hidden="true">↗</span></span></a></li>{% endif %}
+      {%- if site.links.linkedin != "" %}<li><a href="{{ site.links.linkedin }}" rel="me noopener"><span class="k">LinkedIn</span><span class="v">Profile <span aria-hidden="true">↗</span></span></a></li>{% endif %}
+      <li><span class="row"><span class="k">Office</span><span class="v">MIDAS, University of Michigan, Ann Arbor</span></span></li>
+    </ul>
+  </div>
+</section>
