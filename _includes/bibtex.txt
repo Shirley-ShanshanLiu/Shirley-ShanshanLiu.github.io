@@ -1,0 +1,56 @@
+{%- assign p = include.p -%}
+{%- assign lb = "{" -%}{%- assign rb = "}" -%}
+{%- capture authors_bib -%}
+{%- for a in p.authors -%}
+{%- assign clean = a | remove: "*" -%}
+{%- assign parts = clean | split: " " -%}
+{%- assign nparts = parts | size | minus: 1 -%}
+{%- assign given = parts | slice: 0, nparts | join: " " -%}
+{{ parts | last }}, {{ given }}{% unless forloop.last %} and {% endunless %}
+{%- endfor -%}
+{%- endcapture -%}
+{%- capture pages_bib -%}{{ p.pages | default: p.article | replace: "–", "--" }}{%- endcapture -%}
+{%- case p.type -%}
+{%- when "journal" -%}
+@article{{ lb }}{{ p.id }},
+  author    = {{ lb }}{{ authors_bib }}{{ rb }},
+  title     = {{ lb }}{{ lb }}{{ p.title }}{{ rb }}{{ rb }},
+  journal   = {{ lb }}{{ p.venue }}{{ rb }},
+  {%- if p.volume %}
+  volume    = {{ lb }}{{ p.volume }}{{ rb }},{% endif %}
+  {%- if p.number %}
+  number    = {{ lb }}{{ p.number }}{{ rb }},{% endif %}
+  pages     = {{ lb }}{{ pages_bib }}{{ rb }},
+  year      = {{ lb }}{{ p.year }}{{ rb }},
+  doi       = {{ lb }}{{ p.doi }}{{ rb }}
+{{ rb }}
+{%- when "preprint" -%}
+@misc{{ lb }}{{ p.id }},
+  author       = {{ lb }}{{ authors_bib }}{{ rb }},
+  title        = {{ lb }}{{ lb }}{{ p.title }}{{ rb }}{{ rb }},
+  howpublished = {{ lb }}SSRN preprint{{ rb }},
+  year         = {{ lb }}{{ p.year }}{{ rb }},
+  doi          = {{ lb }}{{ p.doi }}{{ rb }}
+{{ rb }}
+{%- when "conference" -%}
+@inproceedings{{ lb }}{{ p.id }},
+  author    = {{ lb }}{{ authors_bib }}{{ rb }},
+  title     = {{ lb }}{{ lb }}{{ p.title }}{{ rb }}{{ rb }},
+  booktitle = {{ lb }}{{ p.venue }}{{ rb }},
+  pages     = {{ lb }}{{ pages_bib }}{{ rb }},
+  publisher = {{ lb }}American Society of Civil Engineers{{ rb }},
+  year      = {{ lb }}{{ p.year }}{{ rb }},
+  doi       = {{ lb }}{{ p.doi }}{{ rb }}
+{{ rb }}
+{%- when "chapter" -%}
+@incollection{{ lb }}{{ p.id }},
+  author    = {{ lb }}{{ authors_bib }}{{ rb }},
+  title     = {{ lb }}{{ p.title }}{{ rb }},
+  booktitle = {{ lb }}{{ p.book }}{{ rb }},
+  editor    = {{ lb }}{{ p.editors_bib }}{{ rb }},
+  chapter   = {{ lb }}{{ p.chapter | remove: "Ch. " }}{{ rb }},
+  publisher = {{ lb }}{{ p.publisher }}{{ rb }},
+  year      = {{ lb }}{{ p.year }}{{ rb }},
+  isbn      = {{ lb }}{{ p.isbn }}{{ rb }}
+{{ rb }}
+{%- endcase -%}

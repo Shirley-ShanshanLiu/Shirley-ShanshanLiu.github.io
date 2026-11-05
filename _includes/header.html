@@ -1,0 +1,26 @@
+{%- assign nav = "research.html|Research,publications.html|Publications,teaching.html|Teaching,cv.html|CV" | split: "," -%}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Shanshan Liu, home">
+      {% include brand-mark.svg %}
+      <span class="brand-name">Shanshan Liu</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        {%- for item in nav -%}
+          {%- assign parts = item | split: "|" -%}
+          {%- assign href = "/" | append: parts[0] -%}
+          <li><a href="{{ href | relative_url }}"{% if page.url == href or page.nav == parts[0] %} aria-current="page"{% endif %}>{{ parts[1] }}</a></li>
+        {%- endfor -%}
+      </ul>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch color theme" title="Switch light / dark">
+        <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>

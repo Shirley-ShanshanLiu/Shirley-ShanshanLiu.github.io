@@ -1,0 +1,141 @@
+# ---------------------------------------------------------------------------
+# Curriculum vitae data (rendered on cv.html; parts reused on other pages)
+# Public-facing only: no home address, no personal phone number.
+# ---------------------------------------------------------------------------
+
+appointments:
+  - what: "Schmidt AI in Science Postdoctoral Research Fellow"
+    where: "Michigan Institute for Data and AI in Society (MIDAS), University of Michigan"
+    when: "Aug 2025 – present"
+    detail: "Mentors: Gábor Orosz and Neda Masoud. Physics-informed, interpretable models of how homes heat and cool, for resilience analysis of connected transportation, building, and energy systems."
+  - what: "Postdoctoral Researcher"
+    where: "School for Environment and Sustainability, University of Michigan"
+    when: "Sep 2024 – Jul 2025"
+    detail: "Mentor: Parth Vaishnav. Indoor heat and cold exposure during extreme-weather outages, and the potential of vehicle-to-home backup to reduce health risk."
+
+education:
+  - what: "Ph.D., Civil Engineering (Transportation)"
+    where: "University of Illinois Urbana-Champaign"
+    when: "2020 – 2024"
+    detail: "Concentration in Computational Science and Engineering. Advisor: Eleftheria Kontou. Dissertation: <a href=\"https://hdl.handle.net/2142/125727\"><i>Electrified Transportation and Urban Energy Systems for Economic, Efficiency, and Resilience Benefits</i></a>."
+  - what: "M.Sc., Transportation Engineering"
+    where: "Southeast University, Nanjing, China"
+    when: "2017 – 2020"
+    detail: "Advisor: Xiucheng Guo. Thesis: <i>Optimization Method of Community Bus Routes Connected by Railway</i>."
+  - what: "B.Sc., Traffic Engineering"
+    where: "Southeast University, Nanjing, China"
+    when: "2013 – 2017"
+    detail: "Advisor: Xiucheng Guo. Thesis: <i>Optimization Method of Pedestrian Organization in Passenger Railway Transport Hub</i>."
+
+research_experience:
+  - what: "Graduate Research Assistant"
+    where: "University of Illinois Urbana-Champaign"
+    when: "Aug 2020 – Aug 2024"
+    detail: "Vehicle-to-home and vehicle-to-building resilience, coupled EV charging and building loads, managed-charging optimization, mobility modeling, and U.S. transportation energy vulnerability."
+  - what: "Graduate Intern"
+    where: "National Renewable Energy Laboratory (NREL)"
+    when: "Jun – Aug 2023"
+    detail: "Long-distance freight simulation: designed a freight-flow algorithm and implemented a route-choice model; delivered code and documentation."
+  - what: "Research Assistant"
+    where: "Southeast University, Nanjing, China"
+    when: "Oct 2016 – Jun 2020"
+    detail: "Applied planning projects for provincial and municipal governments: a Jiangsu provincial transportation strategy (multimodal bottleneck analysis and prioritized measures); rural and integrated urban–rural bus network plans for Ganzhou and Gaoping, with GIS layers, a short-term road-network plan, and a planning atlas; multi-criteria evaluation of 700+ regulatory items for Jiangsu Province; and a multi-source-data method to locate feeder-bus demand in Suzhou."
+
+awards:
+  - year: "2023"
+    what: "Lee Schipper Memorial Scholarship for Sustainable Transport and Energy Efficiency"
+    short: "Lee Schipper Memorial Scholarship"
+    who: "One of three 2023 scholars (VREF / World Resources Institute), for the proposal “Assessing Electric School Buses Benefits: Enhancing Resilience in Community Hubs”"
+    url: "https://www.wri.org/update/2023-lee-schipper-memorial-scholarship-award-announcement"
+    highlight: true
+  - year: "2023"
+    what: "Young Researcher of the Year Award — Finalist"
+    who: "International Transport Forum (ITF); one of four finalists, for the paper on U.S. transportation energy vulnerability"
+    url: "https://www.youtube.com/watch?v=UqBJx3P4fno"
+    url_label: "Finalist video"
+    highlight: true
+  - year: "2023"
+    what: "Future Industry Leader Spotlight Award"
+    who: "American Road & Transportation Builders Association (ARTBA)"
+    url: "https://www.artba.org/news/artba-recognizes-top-women-in-transportation-design-construction/"
+    highlight: true
+  - year: "2022"
+    what: "Leadership Legacy Scholarship for Graduates"
+    who: "WTS Greater Chicago"
+    highlight: true
+  - year: "2021"
+    what: "Learning Innovation Fellowship"
+    who: "Midwest Big Data Innovation Hub — to develop a data-analytics teaching module on alternative transportation fuels and energy use"
+    highlight: true
+  - year: "2021"
+    what: "Winner, Vehicle-to-Grid University Challenge"
+    who: "Pecan Street Inc. — co-led the University of Illinois team with Xi Cheng"
+    url: "https://www.pecanstreet.org/2021/04/v2gwinner/"
+    highlight: true
+  - year: "2015–2020"
+    what: "Earlier honors"
+    who: "Outstanding Graduate (2020); Runner-up, National Transport Science & Technology Competition (2017); SRTP Excellent Prize (2016); university scholarships (2015–2018)"
+
+convenings:
+  - name: "Commun-AI-ty Workshop"
+    funder: "Schmidt Sciences"
+    when: "2025 – 2026"
+    role: "Proposer and lead organizer"
+    detail: "A 3.5-day MIDAS workshop (Ann Arbor, June 2026) on science communication for AI in science, bringing researchers, practitioners, and community participants together around AI literacy and turning AI-for-science research into interactive learning tools."
+    url: "https://midas.umich.edu/?p=20372"
+  - name: "SPARK Forum"
+    funder: "Schmidt Sciences (AI in Science Fellowship Community Initiatives Fund)"
+    when: "2026 – 2027"
+    role: "Co-initiator; content development and logistics"
+    detail: ""
+
+talks_invited:
+  - title: "Health risks and backup power benefits under extreme weather and power outages"
+    venue: "INFORMS Annual Meeting"
+    place: "Atlanta, GA"
+    when: "Oct 2025"
+  - title: ""
+    venue: "INFORMS Annual Meeting"
+    place: "Seattle, WA"
+    when: "Oct 2024"
+
+talks_seminars:
+  - title: "Next Generation Transportation Systems (NGTS) Seminar"
+    venue: "Civil and Environmental Engineering, University of Michigan"
+    when: "Feb 2026"
+  - title: "Guest lecture — Sustainable Transportation"
+    venue: "School for Environment and Sustainability, University of Michigan"
+    when: "Feb 2025"
+  - title: "Energy–Water–Environmental Sustainability Seminar"
+    venue: "Civil and Environmental Engineering, University of Illinois Urbana-Champaign"
+    when: "Feb 2023"
+
+talks_conference:
+  - title: "Weather–time heterogeneity in congestion pricing effects: Evidence from New York City (Wencheng Bao and Shanshan Liu; Liu corresponding author)"
+    venue: "Transportation Research Board (TRB) Annual Meeting"
+    when: "2027"
+    note: "Accepted for presentation"
+  - title: "Six presentations, 2020–2025, including “Leveraging electric vehicles as a resiliency solution for residential backup power during outages” (2024) and “Resilience and environmental benefits of electric school buses as backup power for educational functions continuation during outages” (2025)"
+    venue: "TRB Annual Meeting, Washington, DC"
+    when: "2020 – 2025"
+  - title: "AAAS Annual Meeting"
+    venue: "Denver, CO"
+    when: "Feb 2024"
+  - title: "“Electric vehicles–building nexus: Optimal charging and load management solutions” (poster)"
+    venue: "NAE Regional Meeting and Symposium, Urbana, IL"
+    when: "Apr 2023"
+  - title: "Bridging Transportation Researchers (BTR) — three presentations"
+    venue: ""
+    when: "2022 – 2024"
+
+service:
+  - what: "Journal reviewer"
+    detail: "Transportation Research Part D: Transport and Environment; Energy; Public Transport; Sustainable Cities and Society"
+  - what: "Reviewer, AI Institutes at Michigan (AIIM) Empowering Research with AI Award"
+    when: "2026"
+  - what: "Poster session judge, Electric Vehicle Center Symposium"
+    when: "2025"
+  - what: "Vice President, ASCE Transportation & Development Institute (T&DI) Student Chapter, UIUC"
+    when: "2022 – 2023"
+  - what: "President, Bluesky Studio (Prof. Xiucheng Guo's research group), Southeast University"
+    when: "2019 – 2020"

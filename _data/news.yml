@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------------------
+# "Recent" timeline on the home page — newest first. Keep 6–8 items.
+#   date   display text (e.g. "Jul 2026"); iso: machine-readable "2026-07"
+#   kind   paper | talk | teaching | role | award   (sets the color + label)
+#   text   HTML allowed for links
+# ---------------------------------------------------------------------------
+
+- date: "Jan 2027"
+  iso: "2027-01"
+  kind: talk
+  text: "Upcoming at the TRB Annual Meeting: weather–time heterogeneity in New York City's congestion-pricing effects, with Wencheng Bao (accepted for presentation)."
+
+- date: "Sep 2026"
+  iso: "2026-09"
+  kind: paper
+  text: "New preprint with Wencheng Bao on <a href=\"https://doi.org/10.2139/ssrn.7435471\">weather-conditioned mobility before and after NYC congestion pricing</a>."
+
+- date: "Jul 2026"
+  iso: "2026-07"
+  kind: teaching
+  text: "Taught <em>Evaluating ML Models and Model Selection</em> at the MIDAS AI for Scientists and Engineers Summer Academy."
+
+- date: "Feb 2026"
+  iso: "2026-02"
+  kind: talk
+  text: "Spoke in the Next Generation Transportation Systems seminar, Civil and Environmental Engineering, University of Michigan."
+
+- date: "Oct 2025"
+  iso: "2025-10"
+  kind: talk
+  text: "Invited talk at the INFORMS Annual Meeting, Atlanta, on health risks and backup-power benefits during extreme-weather outages."
+
+- date: "Aug 2025"
+  iso: "2025-08"
+  kind: role
+  text: "Began a Schmidt AI in Science Postdoctoral Fellowship at the Michigan Institute for Data and AI in Society."
+
+- date: "2025"
+  iso: "2025"
+  kind: paper
+  text: "Two first-author papers on vehicles as backup power: homes in <a href=\"https://doi.org/10.1016/j.energy.2025.134613\"><i>Energy</i></a> and schools in <a href=\"https://doi.org/10.1016/j.buildenv.2024.112329\"><i>Building and Environment</i></a>."

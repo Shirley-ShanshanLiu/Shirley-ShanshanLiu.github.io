@@ -1,0 +1,42 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Shanshan Liu",
+    "alternateName": ["Shanshan (Shirley) Liu", "Shirley Liu"],
+    "honorificSuffix": "Ph.D.",
+    "jobTitle": "{{ site.author.role }}",
+    "email": "mailto:{{ site.author.email }}",
+    "image": "{{ site.url }}{{ site.baseurl }}/assets/img/portrait-800.jpg",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "{{ site.author.unit }}, {{ site.author.institution }}",
+      "url": "https://midas.umich.edu/"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Illinois Urbana-Champaign" },
+      { "@type": "CollegeOrUniversity", "name": "Southeast University" }
+    ],
+    "knowsAbout": [
+      "Transportation electrification",
+      "Vehicle-to-home and vehicle-to-building backup power",
+      "Transportation–energy systems integration",
+      "Energy resilience",
+      "Mobility and energy equity",
+      "Physics-informed machine learning",
+      "Optimization"
+    ],
+    "sameAs": [
+      {%- assign same = "" | split: "" -%}
+      {%- for l in site.links -%}{%- if l[1] != "" -%}{%- assign same = same | push: l[1] -%}{%- endif -%}{%- endfor -%}
+      {%- for s in same %}
+      "{{ s }}"{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ]
+  }
+}
+</script>

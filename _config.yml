@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# Site configuration — Shanshan (Shirley) Liu, Ph.D.
+#
+# GitHub Pages builds this site with Jekyll automatically (no plugins, no
+# build step to run). Most everyday edits happen in the `_data/` folder:
+#   _data/publications.yml   papers, preprints, chapters
+#   _data/news.yml           the "Recent" timeline on the home page
+#   _data/cv.yml             appointments, education, awards, talks, service
+#   _data/research.yml       research themes and future directions
+# See README.md for a short maintenance guide.
+# ---------------------------------------------------------------------------
+
+title: "Shanshan (Shirley) Liu"
+short_name: "Shanshan Liu"
+description: >-
+  Shanshan (Shirley) Liu, Schmidt AI in Science Postdoctoral Fellow at the
+  University of Michigan, studies EVs as part of the energy system and grid resilience.
+url: "https://shirley-shanshanliu.github.io"
+baseurl: ""
+lang: en-US
+
+author:
+  name: "Shanshan (Shirley) Liu"
+  given: "Shanshan"
+  family: "Liu"
+  role: "Schmidt AI in Science Postdoctoral Fellow"
+  unit: "Michigan Institute for Data and AI in Society (MIDAS)"
+  institution: "University of Michigan"
+  location: "Ann Arbor, Michigan"
+  email: "shansliu@umich.edu"
+
+# Public profiles. Leave a value empty ("") to hide that link everywhere.
+links:
+  scholar: "https://scholar.google.com/citations?user=64vXCmkAAAAJ"
+  orcid: "https://orcid.org/0000-0002-4173-7485"
+  midas: "https://midas.umich.edu/directory/shanshan-liu/"
+  linkedin: ""
+  github: ""
+
+# A downloadable PDF CV is intentionally NOT published (see README.md,
+# "About the CV"). To link one, add a redacted PDF to the repo (no home
+# address or personal phone number) and put its path here, e.g. "/cv.pdf".
+cv_pdf: ""
+
+# Jekyll ---------------------------------------------------------------------
+markdown: kramdown
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - tools
+  - "*.private.*"
+  - _private
+include:
+  - .well-known
+
+# No remote theme: every layout lives in _layouts/.
+theme: null

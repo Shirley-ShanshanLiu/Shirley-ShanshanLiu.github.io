@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Redirecting… · {{ site.title }}</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="{{ page.redirect_to | prepend: site.baseurl | prepend: site.url }}">
+<meta http-equiv="refresh" content="0; url={{ page.redirect_to | relative_url }}">
+<script>location.replace({{ page.redirect_to | relative_url | jsonify }});</script>
+</head>
+<body>
+<p>This page has moved to <a href="{{ page.redirect_to | relative_url }}">{{ page.redirect_to | relative_url | prepend: site.url }}</a>.</p>
+</body>
+</html>

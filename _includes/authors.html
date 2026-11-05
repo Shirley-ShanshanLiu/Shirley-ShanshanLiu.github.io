@@ -1,0 +1,6 @@
+{%- for a in include.authors -%}
+{%- assign clean = a | remove: "*" -%}
+{%- if clean == "Shanshan Liu" -%}<b>{{ clean }}</b>{%- else -%}{{ clean }}{%- endif -%}
+{%- if a contains "*" -%}<span class="corr" aria-hidden="true">*</span><span class="visually-hidden"> (corresponding author)</span>{%- endif -%}
+{%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}

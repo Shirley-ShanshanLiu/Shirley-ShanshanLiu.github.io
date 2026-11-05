@@ -1,0 +1,73 @@
+{%- assign page_title = page.title | default: site.title -%}
+{%- if page.url == "/" or page.url == "/index.html" -%}
+  {%- assign full_title = site.title | append: " · Electrified mobility, energy systems & resilience" -%}
+{%- else -%}
+  {%- assign full_title = page_title | append: " · " | append: site.title -%}
+{%- endif -%}
+{%- assign desc = page.description | default: site.description | strip_newlines | strip -%}
+{%- assign canonical = page.url | replace: "index.html", "" | prepend: site.baseurl | prepend: site.url -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ desc | escape }}">
+<meta name="author" content="{{ site.author.name }}">
+{%- unless page.noindex %}
+<link rel="canonical" href="{{ canonical }}">
+{%- endunless %}
+{%- if page.noindex %}
+<meta name="robots" content="noindex, follow">
+{%- endif %}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1013" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ full_title }}">
+<meta property="og:description" content="{{ desc | escape }}">
+{%- unless page.noindex %}
+<meta property="og:url" content="{{ canonical }}">
+{%- endunless %}
+<meta property="og:image" content="{{ '/assets/img/social-card.png' | prepend: site.baseurl | prepend: site.url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shanshan (Shirley) Liu — electrified mobility, energy systems and resilience">
+{%- if page.url == '/' %}
+<meta property="profile:first_name" content="{{ site.author.given }}">
+<meta property="profile:last_name" content="{{ site.author.family }}">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+<link rel="preload" href="{{ '/assets/fonts/newsreader-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/overpass-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{%- if page.slug == "home" %}
+<link rel="preload" href="{{ '/assets/fonts/newsreader-latin-wght-italic.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+<script>
+  /* Apply the saved color theme before first paint (avoids a flash). */
+  (function () {
+    var d = document.documentElement;
+    d.className = d.className.replace("no-js", "js");
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") {
+        d.setAttribute("data-theme", t);
+        var m = document.querySelectorAll('meta[name="theme-color"]');
+        for (var i = 0; i < m.length; i++) m[i].setAttribute("content", t === "dark" ? "#0d1013" : "#fbfbfa");
+      }
+    } catch (e) {}
+    /* Failsafe: if site.js never initialises, fall back to the no-JS layout. */
+    setTimeout(function () {
+      if (d.className.indexOf("js-ready") < 0) d.className = d.className.replace(/(^|\s)js(\s|$)/, "$1no-js$2");
+    }, 4000);
+  })();
+</script>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+{%- if page.url == '/' %}
+{% include jsonld.html %}
+{%- endif %}

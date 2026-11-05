@@ -1,0 +1,5 @@
+{%- comment -%} Sets n_journal and n_journal_first from _data/publications.yml {%- endcomment -%}
+{%- assign journals = site.data.publications | where: "type", "journal" -%}
+{%- assign n_journal = journals | size -%}
+{%- assign n_journal_first = 0 -%}
+{%- for p in journals -%}{%- if p.authors[0] contains "Shanshan Liu" -%}{%- assign n_journal_first = n_journal_first | plus: 1 -%}{%- endif -%}{%- endfor -%}

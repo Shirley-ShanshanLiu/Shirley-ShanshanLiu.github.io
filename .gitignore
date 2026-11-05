@@ -1,0 +1,28 @@
+# --- Privacy guardrails ------------------------------------------------------
+# Confidential reference material (CVs with personal contact details, research
+# statements, application packets) must never be committed to this PUBLIC repo.
+# To intentionally publish a redacted CV, use:  git add -f cv-public.pdf
+*.[Pp][Dd][Ff]
+*.[Dd][Oo][Cc]
+*.[Dd][Oo][Cc][Xx]
+*.rtf
+*.odt
+*.pages
+*.tex
+*[Ss]tatement*
+*[Rr]esume*
+_private/
+private/
+*.private.*
+
+# --- Build / tooling ---------------------------------------------------------
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+node_modules/
+Gemfile.lock
+.DS_Store
+Thumbs.db
