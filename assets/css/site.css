@@ -54,6 +54,10 @@
   --brand-shield: #00274c;
   --brand-ink: #ffcb05;
 
+  /* guide-sign plate that highlights the fellowship */
+  --sign: #00694a;
+  --sign-ink: #ffffff;
+
   --link: var(--mobility);
   --focus: #1d5fd1;
   --shadow: 0 1px 0 rgba(21, 24, 30, .04), 0 10px 30px -18px rgba(21, 24, 30, .35);
@@ -96,6 +100,8 @@
   --violet-soft: #2b2d58;
   --brand-shield: #ffcb05;
   --brand-ink: #00274c;
+  --sign: #0d6b52;
+  --sign-ink: #ffffff;
   --focus: #9cc4ff;
   --shadow: 0 1px 0 rgba(3, 18, 24, .25), 0 16px 36px -22px rgba(2, 14, 20, .85);
   color-scheme: dark;
@@ -122,6 +128,8 @@
     --violet-soft: #2b2d58;
     --brand-shield: #ffcb05;
     --brand-ink: #00274c;
+    --sign: #0d6b52;
+    --sign-ink: #ffffff;
     --focus: #9cc4ff;
     --shadow: 0 1px 0 rgba(3, 18, 24, .25), 0 16px 36px -22px rgba(2, 14, 20, .85);
     color-scheme: dark;
@@ -288,8 +296,22 @@ main { display: block; }
 .masthead-name .paren { color: var(--ink-3); font-style: italic; font-weight: 400; }
 .masthead-body {
   display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 12px clamp(28px, 4vw, 56px);
-  grid-template-areas: "photo lede" "photo spec" "photo act"; grid-template-rows: auto auto 1fr; align-items: start;
+  grid-template-areas: "photo sign" "photo lede" "photo spec" "photo act"; grid-template-rows: auto auto auto 1fr; align-items: start;
 }
+.masthead-body .fellow-sign { grid-area: sign; }
+
+/* Fellowship as a highway guide sign: green plate, white legend, inset white border */
+.fellow-sign {
+  justify-self: start; display: inline-flex; flex-direction: column; gap: 3px; margin: 0 0 10px;
+  padding: 11px 18px 10px; border-radius: 7px; background: var(--sign); color: var(--sign-ink);
+  box-shadow: inset 0 0 0 3px var(--sign), inset 0 0 0 4.5px var(--sign-ink), var(--shadow);
+  font-family: var(--sans);
+}
+.fellow-sign .fs-title { font-size: clamp(1.05rem, .98rem + .35vw, 1.28rem); font-weight: 800; letter-spacing: .005em; line-height: 1.2; }
+.fellow-sign .fs-sub { font-size: .86rem; font-weight: 600; line-height: 1.35; opacity: .92; }
+.fellow-sign .sep { color: inherit; opacity: .7; }
+.role-strong { font-weight: 700; color: var(--ink); }
+.page-head .role-strong { font-weight: 600; }
 .masthead-body .portrait { grid-area: photo; }
 .masthead-body .hero-lede { grid-area: lede; }
 .masthead-body .spec { grid-area: spec; }
@@ -301,10 +323,11 @@ main { display: block; }
 .portrait-frame { position: relative; overflow: hidden; background: var(--paper-3); aspect-ratio: 4 / 5; border-radius: 3px; }
 .portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 900px) {
-  .masthead-body { grid-template-columns: 180px minmax(0, 1fr); grid-template-areas: "photo lede" "spec spec" "act act"; grid-template-rows: auto; }
+  .masthead-body { grid-template-columns: 180px minmax(0, 1fr); grid-template-areas: "photo sign" "photo lede" "spec spec" "act act"; grid-template-rows: auto; }
 }
 @media (max-width: 700px) {
-  .masthead-body { grid-template-columns: 96px minmax(0, 1fr); column-gap: 18px; }
+  .masthead-body { grid-template-columns: 96px minmax(0, 1fr); column-gap: 18px; grid-template-areas: "sign sign" "photo lede" "spec spec" "act act"; }
+  .fellow-sign { justify-self: stretch; }
   .hero-lede { font-size: 1.12rem; }
 }
 
@@ -315,6 +338,33 @@ main { display: block; }
 .spec dd a { color: var(--ink); text-decoration-color: var(--rule-strong); }
 .spec dd a:hover { color: var(--mobility); }
 @media (max-width: 520px) { .spec > div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---------- Affiliations & support (logo row) ---------- */
+/* Always a light panel so official logo colors are never altered, in either theme. */
+.affils { margin-top: clamp(32px, 4vw, 52px); }
+.affils-title { margin: 0 0 12px; font-weight: 500; }
+.affil-list {
+  list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #ffffff; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+}
+.affil { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 18px 20px 16px; border-left: 1px solid #e4e8e5; }
+.affil:first-child { border-left: 0; }
+.affil-logo { display: flex; align-items: center; min-height: 44px; border-radius: 4px; }
+.affil-logo img { height: var(--h, 30px); width: auto; max-width: 100%; }
+.affil-role { margin: 0; font-family: var(--sans); font-size: .84rem; line-height: 1.4; color: #4b535a; }
+.affil-role a { color: #00694a; font-weight: 700; }
+.affil-logo:focus-visible { outline-offset: 4px; }
+:root[data-theme="dark"] .affil-list { background: #f2f5f8; border-color: transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .affil-list { background: #f2f5f8; border-color: transparent; } }
+@media (max-width: 900px) {
+  .affil-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .affil:nth-child(odd) { border-left: 0; }
+  .affil:nth-child(n+3) { border-top: 1px solid #e4e8e5; }
+}
+@media (max-width: 460px) {
+  .affil { padding: 14px 14px 12px; }
+  .affil-logo img { height: calc(var(--h, 30px) * .82); }
+}
 
 /* ---------- Central question ---------- */
 .question { padding-block: clamp(56px, 8vw, 104px); background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }

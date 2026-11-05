@@ -12,7 +12,7 @@ description: "Curriculum vitae of Shanshan (Shirley) Liu, Ph.D.: appointments, e
     <p class="label">Curriculum vitae</p>
     <h1>Shanshan (Shirley) Liu, Ph.D.</h1>
     <p class="lede">
-      {{ site.author.role }}, {{ site.author.unit }}, {{ site.author.institution }}.
+      <strong class="role-strong">{{ site.author.role }}</strong>, {{ site.author.unit }}, {{ site.author.institution }}.
       <span class="ui" style="display:block; margin-top:10px; font-size:1rem">
         <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
         {%- if site.links.scholar != "" %}<span class="sep" aria-hidden="true">·</span><a href="{{ site.links.scholar }}" rel="me noopener">Google Scholar</a>{% endif %}

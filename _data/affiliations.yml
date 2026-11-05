@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# "Affiliations & support" logo row at the bottom of the home-page hero.
+# Logos are official files shown unaltered, in their own colors, on a light
+# panel (in both themes). To hide the row, set show_affiliation_logos: false
+# in _config.yml.
+#   logo    file in /assets/img/logos/      h   display height in px
+#   role    short caption under the logo    link (optional) extra text link
+# ---------------------------------------------------------------------------
+
+- name: "Schmidt Sciences"
+  logo: "schmidt-sciences.svg"
+  url: "https://www.schmidtsciences.org/"
+  h: 38
+  role: "Schmidt AI in Science Fellowship"
+
+- name: "Michigan Institute for Data and AI in Society (MIDAS)"
+  logo: "midas.png"
+  url: "https://midas.umich.edu/"
+  h: 31
+  role: "Host institute · 2025–present"
+
+- name: "University of Michigan"
+  logo: "umich.svg"
+  url: "https://umich.edu/"
+  h: 19
+  role: "Postdoctoral research · 2024–present"
+
+- name: "University of Illinois Urbana-Champaign"
+  logo: "illinois.svg"
+  url: "https://illinois.edu/"
+  h: 26
+  role: "Ph.D. 2024"
+  link_text: "Kontou Research Group"
+  link_url: "https://publish.illinois.edu/kontou/"

@@ -42,6 +42,9 @@ links:
 # address or personal phone number) and put its path here, e.g. "/cv.pdf".
 cv_pdf: ""
 
+# Show the "Affiliations & support" logo row on the home page (_data/affiliations.yml).
+show_affiliation_logos: true
+
 # Jekyll ---------------------------------------------------------------------
 markdown: kramdown
 exclude:
