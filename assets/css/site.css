@@ -50,6 +50,10 @@
   --violet: #5b49b3;      /* learning / methods / future */
   --violet-soft: #e6e2f6;
 
+  /* brand mark: University of Michigan blue and maize */
+  --brand-shield: #00274c;
+  --brand-ink: #ffcb05;
+
   --link: var(--mobility);
   --focus: #1d5fd1;
   --shadow: 0 1px 0 rgba(21, 24, 30, .04), 0 10px 30px -18px rgba(21, 24, 30, .35);
@@ -90,6 +94,8 @@
   --coral-soft: #3d1f19;
   --violet: #ada0f5;
   --violet-soft: #26213f;
+  --brand-shield: #ffcb05;
+  --brand-ink: #00274c;
   --focus: #8ab4ff;
   --shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 14px 34px -20px rgba(0, 0, 0, .8);
   color-scheme: dark;
@@ -114,6 +120,8 @@
     --coral-soft: #3d1f19;
     --violet: #ada0f5;
     --violet-soft: #26213f;
+    --brand-shield: #ffcb05;
+    --brand-ink: #00274c;
     --focus: #8ab4ff;
     --shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 14px 34px -20px rgba(0, 0, 0, .8);
     color-scheme: dark;
