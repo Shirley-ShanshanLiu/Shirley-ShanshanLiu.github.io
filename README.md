@@ -17,7 +17,7 @@ Most content lives in plain YAML files in `_data/`. You can edit them directly o
 | Add or edit a paper | `_data/publications.yml` | Copy an existing entry. Put a `*` after the corresponding author's name. Set `selected: true` to feature it on the home page (keep it to four). |
 | Home-page "Latest activity" | `_data/news.yml` | Newest first. `kind` is one of `paper`, `talk`, `teaching`, `role`, `award`. |
 | Appointments, education, awards, talks, service | `_data/cv.yml` | Feeds the CV page and the honors on the home page. |
-| Research themes and future directions | `_data/research.yml` | Feeds the Research page and the "research line" map on the home page. |
+| Research themes and the "looking ahead" statement | `_data/research.yml` | Feeds the Research page and the "research line" map on the home page. |
 | Email, Scholar, ORCID, LinkedIn… | `_config.yml` → `links:` | Leave a value as `""` to hide that link everywhere. |
 
 Page layouts and longer prose are in `index.html`, `research.html`, `publications.html`, `teaching.html`

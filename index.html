@@ -126,14 +126,14 @@ description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging
     <header class="section-head">
       <p class="label">02 — Research program</p>
       <h2 id="program-title">One line, from doctoral work to what comes next</h2>
-      <p>Read it like a transit map: each stop is a research theme. Solid lines are built; the dashed line marks the directions I plan to pursue next.</p>
+      <p>Read it like a transit map: each stop is a research theme. Solid lines are built; the dashed line points to where the work is heading.</p>
     </header>
 
     <div class="arc">
       <div class="arc-legs" aria-hidden="true">
         <div class="arc-leg"><span class="label">Doctoral</span><strong>University of Illinois</strong><span class="when">2020 – 2024</span></div>
         <div class="arc-leg"><span class="label">Postdoctoral</span><strong>University of Michigan</strong><span class="when">2024 – present</span></div>
-        <div class="arc-leg"><span class="label">Next</span><strong>Future directions</strong><span class="when">Planned</span></div>
+        <div class="arc-leg"><span class="label">Next</span><strong>Looking ahead</strong></div>
       </div>
       <ol class="arc-line">
         {%- for t in research.themes -%}
@@ -148,15 +148,13 @@ description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging
           </a>
         </li>
         {%- endfor -%}
-        {%- for d in research.directions -%}
-        <li class="stop stop--d is-future" data-seg="{% if forloop.last %}end{% else %}d{% endif %}"{% if forloop.first %} data-leg="Next · planned directions"{% endif %}>
-          <a href="{{ '/research.html' | relative_url }}#{{ d.id }}">
-            <span class="visually-hidden">Planned direction: </span>
-            <span class="code" aria-hidden="true">{{ d.code }}</span>
-            <span class="name">{{ d.short }}</span>
+        <li class="stop stop--d is-future" data-seg="end" data-leg="Next · looking ahead">
+          <a href="{{ '/research.html' | relative_url }}#next">
+            <span class="visually-hidden">Looking ahead: </span>
+            <span class="code" aria-hidden="true">Next</span>
+            <span class="name">{{ research.outlook.short }}</span>
           </a>
         </li>
-        {%- endfor -%}
       </ol>
       <div class="arc-methods">
         <span class="label">Methods I combine</span>
