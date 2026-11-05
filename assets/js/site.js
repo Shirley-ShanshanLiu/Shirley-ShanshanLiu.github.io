@@ -35,7 +35,7 @@
       var next = currentTheme() === "dark" ? "light" : "dark";
       doc.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
-      $$('meta[name="theme-color"]').forEach(function (m) { m.setAttribute("content", next === "dark" ? "#0d1013" : "#fbfbfa"); });
+      $$('meta[name="theme-color"]').forEach(function (m) { m.setAttribute("content", next === "dark" ? "#0f2c36" : "#fbfbfa"); });
       syncThemeButton(btn);
     });
   });
