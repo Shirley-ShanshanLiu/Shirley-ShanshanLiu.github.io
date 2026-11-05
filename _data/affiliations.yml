@@ -4,14 +4,16 @@
 # panel (in both themes). To hide the row, set show_affiliation_logos: false
 # in _config.yml.
 #   logo    file in /assets/img/logos/      h   display height in px
+# University of Michigan is listed first (U-M brand guide: U-M mark comes first
+# next to partner logos).
 #   role    short caption under the logo    link (optional) extra text link
 # ---------------------------------------------------------------------------
 
-- name: "Schmidt Sciences"
-  logo: "schmidt-sciences.svg"
-  url: "https://www.schmidtsciences.org/"
-  h: 38
-  role: "Schmidt AI in Science Fellowship"
+- name: "University of Michigan"
+  logo: "umich.svg"
+  url: "https://umich.edu/"
+  h: 24
+  role: "Postdoctoral research · 2024–present"
 
 - name: "Michigan Institute for Data and AI in Society (MIDAS)"
   logo: "midas.png"
@@ -19,11 +21,11 @@
   h: 31
   role: "Host institute · 2025–present"
 
-- name: "University of Michigan"
-  logo: "umich.svg"
-  url: "https://umich.edu/"
-  h: 19
-  role: "Postdoctoral research · 2024–present"
+- name: "Schmidt Sciences"
+  logo: "schmidt-sciences.svg"
+  url: "https://www.schmidtsciences.org/"
+  h: 38
+  role: "Schmidt AI in Science Fellowship"
 
 - name: "University of Illinois Urbana-Champaign"
   logo: "illinois.svg"
