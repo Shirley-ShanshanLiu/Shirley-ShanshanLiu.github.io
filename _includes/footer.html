@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="who">
       <strong>Shanshan (Shirley) Liu, Ph.D.</strong>
-      {{ site.author.role }}<br>
+      <span class="role-strong">{{ site.author.role }}</span><br>
       {{ site.author.unit }}<br>
       {{ site.author.institution }}<span class="sep" aria-hidden="true">·</span>{{ site.author.location }}
     </div>
@@ -28,7 +28,7 @@
       </ul>
     </div>
     <div class="colophon">
-      <span>© {{ site.time | date: "%Y" }} Shanshan Liu</span>
+      <span>© {{ site.time | date: "%Y" }} Shanshan Liu<span class="sep" aria-hidden="true">·</span>Personal website; institutional names and logos indicate affiliation only.</span>
       <span>Last updated {{ site.time | date: "%B %-d, %Y" }}<span class="sep" aria-hidden="true">·</span>Hosted on GitHub Pages</span>
     </div>
   </div>

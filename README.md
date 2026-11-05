@@ -19,6 +19,7 @@ Most content lives in plain YAML files in `_data/`. You can edit them directly o
 | Appointments, education, awards, talks, service | `_data/cv.yml` | Feeds the CV page and the honors on the home page. |
 | Research themes and the "looking ahead" statement | `_data/research.yml` | Feeds the Research page and the "research line" map on the home page. |
 | Email, Scholar, ORCID, LinkedIn… | `_config.yml` → `links:` | Leave a value as `""` to hide that link everywhere. |
+| Affiliation logos on the home page | `_data/affiliations.yml` | Official logo files live in `assets/img/logos/`. Set `show_affiliation_logos: false` in `_config.yml` to hide the row. |
 
 Page layouts and longer prose are in `index.html`, `research.html`, `publications.html`, `teaching.html`
 and `cv.html`. Shared pieces (header, footer, the interactive diagram) are in `_includes/`. All styling is in

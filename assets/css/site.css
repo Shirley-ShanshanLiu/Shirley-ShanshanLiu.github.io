@@ -54,6 +54,7 @@
   --brand-shield: #00274c;
   --brand-ink: #ffcb05;
 
+
   --link: var(--mobility);
   --focus: #1d5fd1;
   --shadow: 0 1px 0 rgba(21, 24, 30, .04), 0 10px 30px -18px rgba(21, 24, 30, .35);
@@ -283,13 +284,25 @@ main { display: block; }
 .hero { position: relative; padding-block: clamp(36px, 6vw, 80px) clamp(48px, 7vw, 96px); }
 .masthead-name {
   font-size: clamp(2.9rem, 1.6rem + 6.2vw, 7.4rem); font-weight: 500; letter-spacing: -.035em; line-height: .96;
-  padding-bottom: clamp(18px, 2.4vw, 30px); border-bottom: 3px solid var(--ink); margin-bottom: clamp(24px, 3vw, 40px);
 }
+/* Appointment set as an editorial "dek" under the name; the heavy rule closes the masthead */
+.masthead-dek {
+  display: flex; flex-direction: column; gap: .25rem;
+  margin: clamp(14px, 1.6vw, 22px) 0 clamp(24px, 3vw, 40px);
+  padding-bottom: clamp(18px, 2.2vw, 28px); border-bottom: 3px solid var(--ink);
+  font-family: var(--sans); text-wrap: balance;
+}
+.masthead-dek .dek-title { font-size: clamp(1.06rem, .9rem + .75vw, 1.4rem); font-weight: 600; line-height: 1.25; letter-spacing: .004em; color: var(--ink); }
+.masthead-dek .dek-where { font-size: clamp(.94rem, .88rem + .25vw, 1.08rem); font-weight: 400; line-height: 1.4; color: var(--ink-2); }
+.masthead-dek .nw { white-space: nowrap; }
+@media (max-width: 360px) { .masthead-dek .nw { white-space: normal; } }
 .masthead-name .paren { color: var(--ink-3); font-style: italic; font-weight: 400; }
 .masthead-body {
   display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 12px clamp(28px, 4vw, 56px);
   grid-template-areas: "photo lede" "photo spec" "photo act"; grid-template-rows: auto auto 1fr; align-items: start;
 }
+.role-strong { font-weight: 700; color: var(--ink); }
+.page-head .role-strong { font-weight: 600; }
 .masthead-body .portrait { grid-area: photo; }
 .masthead-body .hero-lede { grid-area: lede; }
 .masthead-body .spec { grid-area: spec; }
@@ -315,6 +328,33 @@ main { display: block; }
 .spec dd a { color: var(--ink); text-decoration-color: var(--rule-strong); }
 .spec dd a:hover { color: var(--mobility); }
 @media (max-width: 520px) { .spec > div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---------- Affiliations & support (logo row) ---------- */
+/* Always a light panel so official logo colors are never altered, in either theme. */
+.affils { margin-top: clamp(32px, 4vw, 52px); }
+.affils-title { margin: 0 0 12px; font-weight: 500; }
+.affil-list {
+  list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #ffffff; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+}
+.affil { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 18px 20px 16px; border-left: 1px solid #e4e8e5; }
+.affil:first-child { border-left: 0; }
+.affil-logo { display: flex; align-items: center; min-height: 44px; border-radius: 4px; }
+.affil-logo img { height: var(--h, 30px); width: auto; max-width: 100%; }
+.affil-role { margin: 0; font-family: var(--sans); font-size: .84rem; line-height: 1.4; color: #4b535a; }
+.affil-role a { color: #00694a; font-weight: 700; }
+.affil-logo:focus-visible { outline-offset: 4px; }
+:root[data-theme="dark"] .affil-list { background: #f2f5f8; border-color: transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .affil-list { background: #f2f5f8; border-color: transparent; } }
+@media (max-width: 900px) {
+  .affil-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .affil:nth-child(odd) { border-left: 0; }
+  .affil:nth-child(n+3) { border-top: 1px solid #e4e8e5; }
+}
+@media (max-width: 460px) {
+  .affil { padding: 14px 14px 12px; }
+  .affil-logo img { height: calc(var(--h, 30px) * .82); }
+}
 
 /* ---------- Central question ---------- */
 .question { padding-block: clamp(56px, 8vw, 104px); background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }

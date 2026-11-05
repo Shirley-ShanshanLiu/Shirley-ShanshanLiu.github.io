@@ -1,7 +1,7 @@
 ---
 layout: default
 slug: home
-description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging, vehicle-to-home and vehicle-to-building backup power, energy equity, and grid resilience."
+description: "Shanshan (Shirley) Liu, Schmidt AI in Science Postdoctoral Fellow at the University of Michigan: EV charging, vehicle backup power, energy equity, resilience."
 ---
 {%- assign pubs = site.data.publications -%}
 {%- assign research = site.data.research -%}
@@ -10,6 +10,10 @@ description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging
 <section class="hero masthead" aria-labelledby="hero-name">
   <div class="wrap">
     <h1 id="hero-name" class="masthead-name">Shanshan <span class="paren">(Shirley)</span> Liu</h1>
+    <p class="masthead-dek">
+      <span class="dek-title">Schmidt AI in Science Postdoctoral&nbsp;Fellow</span>
+      <span class="dek-where"><span class="nw">Michigan Institute for Data and AI in Society (MIDAS),</span> <span class="nw">University of Michigan</span></span>
+    </p>
     <div class="masthead-body">
       <figure class="portrait">
         <div class="portrait-frame">
@@ -26,7 +30,6 @@ description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging
         when climate and infrastructure fail.
       </p>
       <dl class="spec">
-        <div><dt>Now</dt><dd>Schmidt AI in Science Postdoctoral Fellow, Michigan Institute for Data and AI in Society (MIDAS), University of Michigan</dd></div>
         <div><dt>Trained as</dt><dd>Transportation engineer — Ph.D., Civil Engineering, University of Illinois Urbana-Champaign (2024)</dd></div>
         <div><dt>Works on</dt><dd>EV charging and building energy, vehicle-to-home and vehicle-to-building backup power, transportation energy equity, and physics-informed models</dd></div>
         <div><dt>Record</dt><dd>{% include pub-counts.html %}<a href="{{ '/publications.html' | relative_url }}">{{ n_journal }} journal articles, {{ n_journal_first }} as first author</a><span class="sep" aria-hidden="true">·</span><a href="#recognition">ITF Young Researcher of the Year finalist</a><span class="sep" aria-hidden="true">·</span><a href="#recognition">Lee Schipper Scholar</a> (2023)</dd></div>
@@ -40,6 +43,19 @@ description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging
         <a class="btn btn--ghost" href="{{ '/cv.html' | relative_url }}"><svg aria-hidden="true"><use href="#i-cv"/></svg>CV</a>
       </div>
     </div>
+    {%- if site.show_affiliation_logos and site.data.affiliations.size > 0 %}
+    <div class="affils">
+      <h2 class="label affils-title" id="affils-title">Affiliations &amp; support</h2>
+      <ul class="affil-list" aria-labelledby="affils-title">
+        {%- for a in site.data.affiliations %}
+        <li class="affil">
+          <a class="affil-logo" href="{{ a.url }}" rel="noopener"><img src="{{ '/assets/img/logos/' | append: a.logo | relative_url }}" alt="{{ a.name }}" style="--h: {{ a.h }}px" loading="lazy" decoding="async"></a>
+          <p class="affil-role">{{ a.role }}{% if a.link_url %}<br><a href="{{ a.link_url }}">{{ a.link_text }}</a>{% endif %}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
   </div>
 </section>
 
@@ -170,9 +186,9 @@ description: "Shanshan (Shirley) Liu, Ph.D., University of Michigan: EV charging
 <section class="section" id="selected" aria-labelledby="selected-title">
   <div class="wrap">
     <header class="section-head">
-      <p class="label">03 — Selected publications</p>
-      <h2 id="selected-title">First-author evidence</h2>
-      <p>Four peer-reviewed papers that trace the line from who is burdened, to how charging can be managed, to how vehicles can back up homes and schools.</p>
+      <p class="label">03 — Publications</p>
+      <h2 id="selected-title">Selected first-author papers</h2>
+      <p>Four peer-reviewed journal articles, from who carries the transportation energy burden, to how charging can be managed, to how vehicles can back up homes and schools.</p>
     </header>
     <ul class="works">
       {%- assign selected = pubs | where: "selected", true -%}
