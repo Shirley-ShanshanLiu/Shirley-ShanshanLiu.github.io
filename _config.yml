@@ -6,7 +6,7 @@
 #   _data/publications.yml   papers, preprints, chapters
 #   _data/news.yml           the "Recent" timeline on the home page
 #   _data/cv.yml             appointments, education, awards, talks, service
-#   _data/research.yml       research themes and future directions
+#   _data/research.yml       research themes and the "looking ahead" statement
 # See README.md for a short maintenance guide.
 # ---------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------
-# Research program — themes (completed + ongoing) and future directions.
+# Research program — themes (completed + ongoing) and a general outlook.
 # `leg` groups stops on the home-page "research line" map:
-#   doctoral | postdoc | next
+#   doctoral | postdoc
 # `pubs` lists publication ids from publications.yml.
 # ---------------------------------------------------------------------------
 
@@ -104,34 +104,12 @@ themes:
       can scale from a single house to a whole housing stock.
     pubs: []
 
-directions:
-  - code: D1
-    id: coordination
-    short: "Outage-ready vehicles & buildings"
-    title: "Outage-ready vehicles and buildings"
-    question: "How should parked vehicles and buildings be coordinated so that critical trips and safe indoor temperatures are both protected when the grid fails?"
-    body: >-
-      Turning uncertain forecasts of indoor temperatures and vehicle
-      availability into backup-power plans that households and communities
-      can rely on.
-  - code: D2
-    id: access
-    short: "Dependable, fair charging"
-    title: "Charging access people can count on"
-    question: "Where and how should charging be built so that access stays reliable and fair as EV adoption grows?"
-    body: >-
-      Looking past the number of chargers on a map to whether real trips can
-      actually be served, and planning investments that can adapt as demand
-      and the grid change.
-  - code: D3
-    id: fleets
-    short: "Grid-aware fleets & freight"
-    title: "Electric fleets that fit the grid"
-    question: "How can fleet operators plan long-lived vehicle and charger investments around day-to-day operations that keep changing?"
-    body: >-
-      Starting from depot-based fleets such as school buses and extending to
-      freight corridors, with operating plans that respect routes, batteries,
-      and grid limits.
+outlook:
+  short: "Resilient, equitable transportation–energy systems"
+  text: >-
+    I am broadly interested in how electrified transportation, buildings, and
+    the power grid can be planned and operated together to make communities
+    more resilient and more equitable.
 
 methods:
   - name: "Physics-informed learning"

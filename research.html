@@ -20,7 +20,7 @@ description: "Research by Shanshan (Shirley) Liu on EV–building energy couplin
       <li><a href="#approach">Approach</a></li>
       <li><a href="#doctoral">Doctoral themes</a></li>
       <li><a href="#postdoctoral">Postdoctoral themes</a></li>
-      <li><a href="#next">Next directions</a></li>
+      <li><a href="#next">Looking ahead</a></li>
       <li><a href="#foundations">Foundations</a></li>
       <li><a href="#collaborations">Collaborations</a></li>
     </ul>
@@ -105,30 +105,14 @@ description: "Research by Shanshan (Shirley) Liu on EV–building energy couplin
 </section>
 {%- endfor -%}
 
-<!-- ============================== NEXT ============================== -->
+<!-- ============================== LOOKING AHEAD ============================== -->
 <section class="section" id="next" aria-labelledby="next-title">
   <div class="wrap">
     <header class="section-head">
-      <p class="label">Next directions</p>
-      <h2 id="next-title">From nominal capacity to dependable service</h2>
-      <p>
-        Electricity demand is climbing, cars that can send power back to a home are reaching the market, and extreme weather
-        keeps revealing how tightly transportation, buildings, and the grid are tied together. The next step is to move from
-        what a battery could do in principle to service that people can rely on. I plan to pursue three directions — and in
-        each, fairness is part of the engineering: who benefits, who pays, and who is left exposed are outcomes to measure.
-      </p>
+      <p class="label">Looking ahead</p>
+      <h2 id="next-title">Where the work is heading</h2>
+      <p>{{ research.outlook.text }}</p>
     </header>
-    <ol class="directions">
-      {%- for d in research.directions -%}
-      <li class="direction" id="{{ d.id }}">
-        {% include glyph.html id=d.id %}
-        <span class="code">{{ d.code }}</span>
-        <h3>{{ d.title }}</h3>
-        <p class="rq">{{ d.question }}</p>
-        <p>{{ d.body }}</p>
-      </li>
-      {%- endfor -%}
-    </ol>
   </div>
 </section>
 

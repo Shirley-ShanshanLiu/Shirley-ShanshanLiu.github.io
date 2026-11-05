@@ -19,7 +19,7 @@
 {%- endif %}
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0d1013" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0f2539" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ site.title }}">
@@ -58,7 +58,7 @@
       if (t === "light" || t === "dark") {
         d.setAttribute("data-theme", t);
         var m = document.querySelectorAll('meta[name="theme-color"]');
-        for (var i = 0; i < m.length; i++) m[i].setAttribute("content", t === "dark" ? "#0d1013" : "#fbfbfa");
+        for (var i = 0; i < m.length; i++) m[i].setAttribute("content", t === "dark" ? "#0f2539" : "#fbfbfa");
       }
     } catch (e) {}
     /* Failsafe: if site.js never initialises, fall back to the no-JS layout. */
